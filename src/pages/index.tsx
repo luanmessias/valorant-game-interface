@@ -1,9 +1,9 @@
-import { Title } from "../styles/pages/Home";
+import { Title } from '../styles/pages/Home';
 
-export default function Home() {
-	return(
+export default function Home(): JSX.Element {
+  return (
     <div>
       <Title>Hello NextJs</Title>
-    </div>	
-  )
+    </div>
+  );
 }
