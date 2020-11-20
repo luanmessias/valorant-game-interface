@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { LinkHTMLAttributes } from 'react';
 import { Container } from './Styles';
 
-type linkProps = LinkHTMLAttributes<HTMLButtonElement>;
+type linkProps = LinkHTMLAttributes<HTMLLinkElement>;
 
 function NavLink({ href, children }: linkProps): JSX.Element {
   return (

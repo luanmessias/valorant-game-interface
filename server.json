@@ -1,0 +1,11 @@
+{
+  "categories": [
+    { "id": "inicio", "url": "/", "title": "inicio" },
+    { "id": "passe", "url": "passe", "title": "passe de batalha" },
+    { "id": "agentes", "url": "agentes", "title": "agentes" },
+    { "id": "jogar", "url": "jogar", "title": "jogar" },
+    { "id": "carreira", "url": "carreira", "title": "carreira" },
+    { "id": "colecao", "url": "colecao", "title": "colecao" },
+    { "id": "loja", "url": "loja", "title": "loja" }
+  ]
+}

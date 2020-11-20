@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "server": "npx json-server server.json -p 3333 -w"
   },
   "dependencies": {
     "next": "^10.0.2",

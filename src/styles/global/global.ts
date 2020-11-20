@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -16,6 +16,16 @@ body,
   width: 100%;
   height: 100%;
 }
+`;
+
+export const Main = styled.div`
+  background-image: url('/img/home_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
 `;
 
 export default GlobalStyle;
