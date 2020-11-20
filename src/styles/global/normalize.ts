@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
-export default createGlobalStyle`
+const GlobalNormalize = createGlobalStyle`
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -350,18 +350,6 @@ template {
 [hidden] {
   display: none;
 }
-
-/**
-* Custom styles
-**/
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #121214;
-  color: #CCCCCC;
-  font-family: Arial, Helvetica, sans-serif;
-}
 `;
+
+export default GlobalNormalize;
