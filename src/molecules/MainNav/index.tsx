@@ -1,36 +1,31 @@
-import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import NavLink from '../../atoms/NavLink';
+import ApiData from '../../hooks/SwrFetchHook';
+import { Container, SvgPlay } from './Styles';
 
-interface ICategories {
-  id: string;
-  title: string;
-  url: string;
-}
+export default function MainNav(): JSX.Element {
+  const { data, isLoading, isError } = ApiData('categories');
 
-function MainNav(): JSX.Element {
-  const [categories, setCategories] = useState<ICategories[]>([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3333/categories').then(response => {
-      response.json().then(data => {
-        setCategories(data);
-      });
-    });
-  }, []);
+  if (isLoading) return <h1>carregando</h1>;
+  if (isError) return <h1>deu ruim</h1>;
 
   return (
-    <nav>
+    <Container>
       <ul>
-        {categories.map(categorie => {
+        {data.map(category => {
           return (
-            <li key={categorie.id}>
-              <NavLink href={categorie.url}>{categorie.title}</NavLink>
+            <li
+              key={category.id}
+              {...(category.id === 'jogar' ? { className: 'play' } : {})}
+            >
+              <NavLink href={category.url}>{category.title}</NavLink>
             </li>
           );
         })}
       </ul>
-    </nav>
+      <SvgPlay>
+        <Image src="/svg/main-nav-center.svg" width="354" height="55" />
+      </SvgPlay>
+    </Container>
   );
 }
-
-export default MainNav;
