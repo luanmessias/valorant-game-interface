@@ -1,11 +1,11 @@
 {
   "categories": [
-    { "id": "inicio", "url": "/", "title": "inicio" },
-    { "id": "passe", "url": "/pass", "title": "passe de batalha" },
-    { "id": "agentes", "url": "/agents", "title": "agentes" },
-    { "id": "jogar", "url": "/play", "title": "jogar" },
-    { "id": "carreira", "url": "/carrier", "title": "carreira" },
-    { "id": "colecao", "url": "/colection", "title": "colecao" },
-    { "id": "loja", "url": "/store", "title": "loja" }
+    { "id": "init", "url": "/", "title": "inicio" },
+    { "id": "pass", "url": "/pass", "title": "passe" },
+    { "id": "agents", "url": "/agents", "title": "agentes" },
+    { "id": "play", "url": "/play", "title": "jogar" },
+    { "id": "carrier", "url": "/carrier", "title": "carreira" },
+    { "id": "colection", "url": "/colection", "title": "colecao" },
+    { "id": "store", "url": "/store", "title": "loja" }
   ]
 }

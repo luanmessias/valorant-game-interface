@@ -16,7 +16,19 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/fonts/*": ["./public/fonts/*"],
+      "@/svg/*": ["./public/svg/*"],
+      "@/img/*": ["./public/img/*"],
+      "@/atoms/*": ["./src/atoms/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/molecules/*": ["./src/molecules/*"],
+      "@/organisms/*": ["./src/organisms/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/globalstyles/*": ["./src/styles/*"],
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -25,5 +37,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }
