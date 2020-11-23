@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { motion } from 'framer-motion';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -16,13 +17,15 @@ body,
   width: 100%;
   height: 100%;
 }
-`;
-
-export const Main = styled.div`
+#__next {
   background-image: url('/img/home_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+`;
+
+export const Main = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;

@@ -5,7 +5,7 @@
     { "id": "agents", "url": "/agents", "title": "agentes" },
     { "id": "play", "url": "/play", "title": "jogar" },
     { "id": "carrier", "url": "/carrier", "title": "carreira" },
-    { "id": "colection", "url": "/colection", "title": "colecao" },
+    { "id": "collection", "url": "/collection", "title": "colecao" },
     { "id": "store", "url": "/store", "title": "loja" }
   ]
 }
