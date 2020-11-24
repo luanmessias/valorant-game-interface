@@ -22,6 +22,7 @@
       "@/fonts/*": ["./public/fonts/*"],
       "@/svg/*": ["./public/svg/*"],
       "@/img/*": ["./public/img/*"],
+      "@/videos/*": ["./public/videos/*"],
       "@/atoms/*": ["./src/atoms/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/molecules/*": ["./src/molecules/*"],

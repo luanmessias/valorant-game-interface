@@ -18,7 +18,7 @@ function ValorantGameLink(): JSX.Element {
       }}
     >
       <Link href="https://playvalorant.com/en-gb/">
-        <a target="_blank" className="ValorantGameLink">
+        <a target="_blank" rel="noreferrer" className="ValorantGameLink">
           <ValorantLogo width="30px" height="30px" />
         </a>
       </Link>
