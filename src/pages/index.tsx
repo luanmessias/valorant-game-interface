@@ -1,7 +1,10 @@
+import FrontLogo from '@/molecules/FrontLogo';
+import { Container } from '@/pageStyles/home';
+
 export default function Home(): JSX.Element {
   return (
-    <>
-      <h1>Home</h1>
-    </>
+    <Container>
+      <FrontLogo />
+    </Container>
   );
 }

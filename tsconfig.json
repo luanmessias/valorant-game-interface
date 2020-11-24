@@ -27,7 +27,8 @@
       "@/molecules/*": ["./src/molecules/*"],
       "@/organisms/*": ["./src/organisms/*"],
       "@/pages/*": ["./src/pages/*"],
-      "@/globalstyles/*": ["./src/styles/*"],
+      "@/globalStyles/*": ["./src/styles/*"],
+      "@/pageStyles/*":["./src/styles/pages/*"]
     }
   },
   "include": [
