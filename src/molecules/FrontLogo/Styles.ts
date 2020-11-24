@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
 `;
 
 export const CurrentAct = styled.span`
