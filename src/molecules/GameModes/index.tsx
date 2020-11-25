@@ -2,14 +2,20 @@ import React from 'react'
 import ModeRankedSVG from '@/svg/gm-ranked.svg'
 import ModeSpikeSVG from '@/svg/gm-spike.svg'
 import ModeDMSVG from '@/svg/gm-deathmath.svg'
-import ApiData from '@/hooks/SwrFetchHook'
+import SwrFetchHook from '@/hooks/SwrFetchHook'
 import { Container, Content, DecorativeBar, ModeBox, Title } from './Styles'
 
-const GameModes: React.FC = () => {
-  const { data, isLoading, isError } = ApiData('most_played_modes')
+interface IGameMode {
+  id: string
+  position: number
+  title: string
+  time: string
+}
 
-  if (isLoading) return <h1>carregando</h1>
-  if (isError) return <h1>deu ruim</h1>
+const GameModes: React.FC = () => {
+  const { data } = SwrFetchHook<IGameMode[]>(
+    'http://localhost:3333/most_played_modes'
+  )
 
   function getGameModeSymbol(mode: string): JSX.Element {
     switch (mode) {
@@ -35,7 +41,7 @@ const GameModes: React.FC = () => {
       <DecorativeBar />
       <Title>MODOS EM DESTAQUE</Title>
       <Content>
-        {data.map(gm => {
+        {data?.map(gm => {
           return (
             <ModeBox key={gm.id}>
               <div className="symbol">{getGameModeSymbol(gm.id)}</div>

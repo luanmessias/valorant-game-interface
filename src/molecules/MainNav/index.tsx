@@ -2,18 +2,25 @@ import React from 'react'
 import NavLink from '@/atoms/NavLink'
 import ValorantGameLink from '@/atoms/ValorantGameLink'
 import SettingsLink from '@/atoms/SettingsLink'
-import ApiData from '@/hooks/SwrFetchHook'
+import SwrFetchHook from '@/hooks/SwrFetchHook'
 import ClockIconSvg from '@/svg/clock-icon.svg'
 import MainNavCenterSvg from '@/svg/main-nav-center.svg'
 import ValorantPointsSvg from '@/svg/valorant-points.svg'
 import RadiantPointsSvg from '@/svg/radiant-points.svg'
 import { Container, SvgPlay } from './Styles'
 
-const MainNav: React.FC = () => {
-  const { data, isLoading, isError } = ApiData('categories')
+interface INavItem {
+  id: string
+  url: string
+  title: string
+}
 
-  if (isLoading) return <h1>carregando</h1>
-  if (isError) return <h1>deu ruim</h1>
+const MainNav: React.FC = () => {
+  const { data } = SwrFetchHook<INavItem[]>('http://localhost:3333/categories')
+
+  if (!data) {
+    return <span>Carregando...</span>
+  }
 
   return (
     <Container>

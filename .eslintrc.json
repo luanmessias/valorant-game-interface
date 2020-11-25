@@ -32,6 +32,7 @@
     "react/prop-types": "off",
     "no-use-before-define": [0],
     "@typescript-eslint/no-use-before-define": [1],
-    "multiline-ternary": "off"
+    "multiline-ternary": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }

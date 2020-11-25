@@ -1,26 +1,14 @@
-import React from 'react'
 import useSWR from 'swr'
 
-interface IData {
-  [key: string]: any
+function SwrFetchHook<Data = any, Error = any>(url: string) {
+  const { data, error } = useSWR<Data, Error>(url, async url => {
+    const response = await fetch(url)
+    const data = await response.json()
+
+    return data
+  })
+
+  return { data, error }
 }
 
-interface IApi {
-  data: IData
-  isLoading: boolean
-  isError: boolean
-}
-
-const fetcher = (...args) => fetch(...args).then(res => res.json())
-
-const ApiData: React.FC = (section: string): IApi => {
-  const { data, error } = useSWR(`http://localhost:3333/${section}`, fetcher)
-
-  return {
-    data,
-    isLoading: !error && !data,
-    isError: error
-  }
-}
-
-export default ApiData
+export default SwrFetchHook
