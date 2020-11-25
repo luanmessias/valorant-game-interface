@@ -16,7 +16,7 @@ interface INavItem {
 }
 
 const MainNav: React.FC = () => {
-  const { data } = SwrFetchHook<INavItem[]>('http://localhost:3333/categories')
+  const { data } = SwrFetchHook<INavItem[]>('categories')
 
   if (!data) {
     return <span>Carregando...</span>

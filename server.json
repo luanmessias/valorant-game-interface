@@ -1,15 +1,42 @@
 {
   "categories": [
-    { "id": "init","url": "/", "title": "inicio" },
-    { "id": "pass", "url": "/pass", "title": "passe" },
-    { "id": "agents", "url": "/agents", "title": "agentes" },
-    { "id": "play", "url": "/play", "title": "jogar" },
-    { "id": "carrier", "url": "/carrier", "title": "carreira" },
-    { "id": "collection", "url": "/collection", "title": "colecao" },
-    { "id": "store", "url": "/store", "title": "loja" }
+    {
+      "id": "init",
+      "url": "/",
+      "title": "inicio"
+    },
+    {
+      "id": "pass",
+      "url": "/pass",
+      "title": "passe"
+    },
+    {
+      "id": "agents",
+      "url": "/agents",
+      "title": "agentes"
+    },
+    {
+      "id": "play",
+      "url": "/play",
+      "title": "jogar"
+    },
+    {
+      "id": "carrier",
+      "url": "/carrier",
+      "title": "carreira"
+    },
+    {
+      "id": "collection",
+      "url": "/collection",
+      "title": "colecao"
+    },
+    {
+      "id": "store",
+      "url": "/store",
+      "title": "loja"
+    }
   ],
-
-  "most_played_modes": [
+  "game_modes": [
     {
       "id": "ranked",
       "position": 1,
@@ -34,6 +61,5 @@
       "title": "DEATH MATH",
       "time": "30-40 min"
     }
-
   ]
 }

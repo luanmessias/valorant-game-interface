@@ -13,9 +13,7 @@ interface IGameMode {
 }
 
 const GameModes: React.FC = () => {
-  const { data } = SwrFetchHook<IGameMode[]>(
-    'http://localhost:3333/most_played_modes'
-  )
+  const { data } = SwrFetchHook<IGameMode[]>('game_modes')
 
   function getGameModeSymbol(mode: string): JSX.Element {
     switch (mode) {
