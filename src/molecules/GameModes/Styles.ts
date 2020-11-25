@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 319px;
-`;
+`
 
 export const Content = styled.div`
   box-sizing: border-box;
@@ -10,7 +10,7 @@ export const Content = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
-`;
+`
 
 export const DecorativeBar = styled.div`
   width: 100%;
@@ -27,7 +27,7 @@ export const DecorativeBar = styled.div`
     background-color: #fff;
     display: block;
   }
-`;
+`
 
 export const Title = styled.h2`
   display: flex;
@@ -38,7 +38,7 @@ export const Title = styled.h2`
   font-size: 15px;
   font-weight: 700;
   height: 31px;
-`;
+`
 
 export const ModeBox = styled.div`
   width: 100%;
@@ -81,4 +81,4 @@ export const ModeBox = styled.div`
     color: #fff;
     width: calc(100% - (180 + 45));
   }
-`;
+`

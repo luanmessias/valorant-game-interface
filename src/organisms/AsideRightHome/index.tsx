@@ -1,9 +1,12 @@
-import { Container } from './Styles';
+import React from 'react'
+import { Container } from './Styles'
 
-export default function AsideRightHome(): JSX.Element {
+const AsideRightHome: React.FC = () => {
   return (
     <Container>
       <h2>asdasd</h2>
     </Container>
-  );
+  )
 }
+
+export default AsideRightHome

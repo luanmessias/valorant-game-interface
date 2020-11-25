@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { shade } from 'polished';
+import styled from 'styled-components'
 
 export const Container = styled.nav`
   display: flex;
@@ -103,11 +102,11 @@ export const Container = styled.nav`
       }
     }
   }
-`;
+`
 
 export const SvgPlay = styled.div`
   position: absolute;
   top: 0px;
   width: 354px;
   height: 55px;
-`;
+`

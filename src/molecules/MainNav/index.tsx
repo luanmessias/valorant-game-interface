@@ -1,18 +1,19 @@
-import NavLink from '@/atoms/NavLink';
-import ValorantGameLink from '@/atoms/ValorantGameLink';
-import SettingsLink from '@/atoms/SettingsLink';
-import ApiData from '@/hooks/SwrFetchHook';
-import ClockIconSvg from '@/svg/clock-icon.svg';
-import MainNavCenterSvg from '@/svg/main-nav-center.svg';
-import ValorantPointsSvg from '@/svg/valorant-points.svg';
-import RadiantPointsSvg from '@/svg/radiant-points.svg';
-import { Container, SvgPlay } from './Styles';
+import React from 'react'
+import NavLink from '@/atoms/NavLink'
+import ValorantGameLink from '@/atoms/ValorantGameLink'
+import SettingsLink from '@/atoms/SettingsLink'
+import ApiData from '@/hooks/SwrFetchHook'
+import ClockIconSvg from '@/svg/clock-icon.svg'
+import MainNavCenterSvg from '@/svg/main-nav-center.svg'
+import ValorantPointsSvg from '@/svg/valorant-points.svg'
+import RadiantPointsSvg from '@/svg/radiant-points.svg'
+import { Container, SvgPlay } from './Styles'
 
-export default function MainNav(): JSX.Element {
-  const { data, isLoading, isError } = ApiData('categories');
+const MainNav: React.FC = () => {
+  const { data, isLoading, isError } = ApiData('categories')
 
-  if (isLoading) return <h1>carregando</h1>;
-  if (isError) return <h1>deu ruim</h1>;
+  if (isLoading) return <h1>carregando</h1>
+  if (isError) return <h1>deu ruim</h1>
 
   return (
     <Container>
@@ -39,7 +40,7 @@ export default function MainNav(): JSX.Element {
                 ''
               )}
             </li>
-          );
+          )
         })}
 
         <li className="points">
@@ -58,5 +59,6 @@ export default function MainNav(): JSX.Element {
         </li>
       </ul>
     </Container>
-  );
+  )
 }
+export default MainNav

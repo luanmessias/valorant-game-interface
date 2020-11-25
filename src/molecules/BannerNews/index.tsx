@@ -1,6 +1,7 @@
-import { Container } from './Styles';
+import React from 'react'
+import { Container } from './Styles'
 
-export default function BannerNews(): JSX.Element {
+const BannerNews: React.FC = () => {
   return (
     <Container>
       <div>
@@ -8,5 +9,7 @@ export default function BannerNews(): JSX.Element {
         <span>NOVO PERSONAGEM</span>
       </div>
     </Container>
-  );
+  )
 }
+
+export default BannerNews

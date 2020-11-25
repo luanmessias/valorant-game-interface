@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   background-image: url('/img/banner-news.jpg');
@@ -13,7 +13,7 @@ export const Container = styled.div`
   }
   strong {
     font-size: 27px;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -21,6 +21,6 @@ export const Container = styled.div`
   span {
     font-size: 14px;
     font-weight: 300;
-    color: #fff;
+    color: ${props => props.theme.colors.text};
   }
-`;
+`

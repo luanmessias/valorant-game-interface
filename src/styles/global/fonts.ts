@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalFonts = createGlobalStyle`
   //900
@@ -91,6 +91,6 @@ const GlobalFonts = createGlobalStyle`
     font-weight: 100;
     font-display: swap;
   }
-`;
+`
 
-export default GlobalFonts;
+export default GlobalFonts

@@ -1,8 +1,9 @@
-import GearConfig from '@/svg/gear-config.svg';
-import Link from 'next/link';
-import { Container } from './Styles';
+import React from 'react'
+import GearConfig from '@/svg/gear-config.svg'
+import Link from 'next/link'
+import { Container } from './Styles'
 
-function SettingsLink(): JSX.Element {
+const SettingsLink: React.FC = () => {
   return (
     <Container>
       <Link href="/settings">
@@ -11,7 +12,7 @@ function SettingsLink(): JSX.Element {
         </a>
       </Link>
     </Container>
-  );
+  )
 }
 
-export default SettingsLink;
+export default SettingsLink

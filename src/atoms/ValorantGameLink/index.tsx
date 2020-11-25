@@ -1,8 +1,9 @@
-import Link from 'next/link';
-import ValorantLogo from '@/svg/valorant-logo.svg';
-import { Container } from './Styles';
+import React from 'react'
+import Link from 'next/link'
+import ValorantLogo from '@/svg/valorant-logo.svg'
+import { Container } from './Styles'
 
-function ValorantGameLink(): JSX.Element {
+const ValorantGameLink: React.FC = () => {
   return (
     <Container
       whileHover={{
@@ -13,8 +14,8 @@ function ValorantGameLink(): JSX.Element {
         scale: [1, 1.5, 1],
         borderRadius: ['0%', '20%', '50%'],
         transition: {
-          duration: 0.3,
-        },
+          duration: 0.3
+        }
       }}
     >
       <Link href="https://playvalorant.com/en-gb/">
@@ -23,7 +24,7 @@ function ValorantGameLink(): JSX.Element {
         </a>
       </Link>
     </Container>
-  );
+  )
 }
 
-export default ValorantGameLink;
+export default ValorantGameLink

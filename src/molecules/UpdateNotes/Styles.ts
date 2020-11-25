@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   position: relative;
@@ -32,7 +32,7 @@ export const Container = styled.div`
       right: 0;
     }
   }
-`;
+`
 
 export const Content = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
@@ -64,4 +64,4 @@ export const Content = styled.div`
     width: 100%;
     height: 16px;
   }
-`;
+`

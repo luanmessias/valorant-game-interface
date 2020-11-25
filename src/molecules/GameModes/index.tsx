@@ -1,35 +1,32 @@
-import ModeRankedSVG from '@/svg/gm-ranked.svg';
-import ModeSpikeSVG from '@/svg/gm-spike.svg';
-import ModeDMSVG from '@/svg/gm-deathmath.svg';
-import ApiData from '@/hooks/SwrFetchHook';
-import { Container, Content, DecorativeBar, ModeBox, Title } from './Styles';
+import React from 'react'
+import ModeRankedSVG from '@/svg/gm-ranked.svg'
+import ModeSpikeSVG from '@/svg/gm-spike.svg'
+import ModeDMSVG from '@/svg/gm-deathmath.svg'
+import ApiData from '@/hooks/SwrFetchHook'
+import { Container, Content, DecorativeBar, ModeBox, Title } from './Styles'
 
-interface DependData {
-  [key: string]: string;
-}
+const GameModes: React.FC = () => {
+  const { data, isLoading, isError } = ApiData('most_played_modes')
 
-export default function GameModes(): JSX.Element {
-  const { data, isLoading, isError } = ApiData('most_played_modes');
-
-  if (isLoading) return <h1>carregando</h1>;
-  if (isError) return <h1>deu ruim</h1>;
+  if (isLoading) return <h1>carregando</h1>
+  if (isError) return <h1>deu ruim</h1>
 
   function getGameModeSymbol(mode: string): JSX.Element {
     switch (mode) {
       case 'ranked':
-        return <ModeRankedSVG />;
-        break;
+        return <ModeRankedSVG />
+        break
       case 'casual':
-        return <ModeRankedSVG />;
-        break;
+        return <ModeRankedSVG />
+        break
       case 'spike':
-        return <ModeSpikeSVG />;
-        break;
+        return <ModeSpikeSVG />
+        break
       case 'dm':
-        return <ModeDMSVG />;
-        break;
+        return <ModeDMSVG />
+        break
       default:
-        return <ModeRankedSVG />;
+        return <ModeRankedSVG />
     }
   }
 
@@ -38,17 +35,19 @@ export default function GameModes(): JSX.Element {
       <DecorativeBar />
       <Title>MODOS EM DESTAQUE</Title>
       <Content>
-        {data.map((gm: DependData) => {
+        {data.map(gm => {
           return (
             <ModeBox key={gm.id}>
               <div className="symbol">{getGameModeSymbol(gm.id)}</div>
               <div className="name">{gm.title}</div>
               <div className="time">{gm.time}</div>
             </ModeBox>
-          );
+          )
         })}
       </Content>
       <DecorativeBar />
     </Container>
-  );
+  )
 }
+
+export default GameModes

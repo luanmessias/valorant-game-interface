@@ -1,24 +1,28 @@
-import Document, { DocumentContext } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
-
-interface InitialProps {
-  styles: JSX.Element;
-  html: string;
-  head?: JSX.Element[];
-}
+import React from 'react'
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript
+} from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<InitialProps> {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
+    const sheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
-        });
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+        })
 
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
         styles: (
@@ -26,10 +30,29 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
-      };
+        )
+      }
     } finally {
-      sheet.seal();
+      sheet.seal()
     }
+  }
+
+  render(): JSX.Element {
+    return (
+      <Html lang="en">
+        <Head>
+          <title>Valorant Game Interface</title>
+          <meta charSet="utf-8" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+            rel="stylesheet"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }

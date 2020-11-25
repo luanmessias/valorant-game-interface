@@ -1,7 +1,11 @@
-export default function Play(): JSX.Element {
+import React from 'react'
+
+const Play: React.FC = () => {
   return (
     <>
-      <h1>Let's play</h1>
+      <h1>Lets play</h1>
     </>
-  );
+  )
 }
+
+export default Play

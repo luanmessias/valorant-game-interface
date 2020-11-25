@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import { motion } from 'framer-motion';
+import styled, { createGlobalStyle } from 'styled-components'
+import { motion } from 'framer-motion'
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -23,13 +23,13 @@ body,
   background-size: cover;
   background-position: center;
 }
-`;
+`
 
 export const Main = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

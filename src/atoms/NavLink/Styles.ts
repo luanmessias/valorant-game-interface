@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.a`
   font-size: 14;
@@ -13,4 +13,4 @@ export const Container = styled.a`
   &:active {
     color: #eaeeb2;
   }
-`;
+`

@@ -1,6 +1,6 @@
 import { Container, Content } from './Styles';
 
-export default function UpdateNotes(): JSX.Element {
+const UpdateNotes: React.FC = () => {
   return (
     <Container>
       <div className="dot topLeft" />
@@ -14,3 +14,5 @@ export default function UpdateNotes(): JSX.Element {
     </Container>
   );
 }
+
+export default UpdateNotes

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-`;
+`
 
 export const CurrentAct = styled.span`
   display: flex;
@@ -19,4 +19,4 @@ export const CurrentAct = styled.span`
   color: #fff;
   margin-top: 15px;
   letter-spacing: 10px;
-`;
+`

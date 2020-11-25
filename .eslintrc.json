@@ -1,73 +1,37 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
+    "es2021": true,
+    "node": true,
     "jest": true
   },
   "extends": [
     "plugin:react/recommended",
-    "airbnb",
+    "standard",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "prettier/standard",
+    "prettier/react"
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "plugins": [
     "react",
-    "react-hooks",
     "@typescript-eslint",
     "prettier"
   ],
   "rules": {
-    "no-use-before-define": "off",
     "prettier/prettier": "error",
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-props-no-spreading": "off",
+    "space-before-function-paren": "off",
     "react/prop-types": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "no-unused-expressions": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-    "import/prefer-default-export": "off",
-    "import/no-duplicates": "off",
-    "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/camelcase": "off",
-    "camelcase":"off",
-    "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/explicit-function-return-type": [
-      "error",
-      {
-        "allowExpressions": true
-      }
-    ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
-      "specialLink": [ "hrefLeft", "hrefRight" ],
-      "aspects": [ "invalidHref", "preferButton" ]
-    }]
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    }
+    "no-use-before-define": [0],
+    "@typescript-eslint/no-use-before-define": [1],
+    "multiline-ternary": "off"
   }
 }

@@ -1,15 +1,16 @@
-import Link from 'next/link';
-import { LinkHTMLAttributes } from 'react';
-import { Container } from './Styles';
+import React, { LinkHTMLAttributes } from 'react'
+import Link from 'next/link'
 
-type linkProps = LinkHTMLAttributes<HTMLLinkElement>;
+import { Container } from './Styles'
 
-function NavLink({ href, children }: linkProps): JSX.Element {
+type linkProps = LinkHTMLAttributes<HTMLLinkElement>
+
+const NavLink: React.FC = ({ href, children }: linkProps) => {
   return (
     <Link href={href} passHref>
       <Container>{children}</Container>
     </Link>
-  );
+  )
 }
 
-export default NavLink;
+export default NavLink

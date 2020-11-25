@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled(motion.div)`
   display: flex;
@@ -18,4 +18,4 @@ export const Container = styled(motion.div)`
     height: 20px;
     fill: #fff;
   }
-`;
+`
