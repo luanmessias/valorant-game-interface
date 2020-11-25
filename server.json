@@ -61,5 +61,91 @@
       "title": "DEATH MATH",
       "time": "30-40 min"
     }
+  ],
+  "firneds": [
+    {
+      "name": "roxfears",
+      "activity": "Available",
+      "status": "me",
+      "avatar": "killjoy"
+    },
+    {
+      "name": "JohnDoe",
+      "activity": "Competitive",
+      "status": "Online",
+      "avatar": "jett"
+    },
+    {
+      "name": "LadyDash",
+      "activity": "Deathmatch",
+      "status": "Online",
+      "avatar": "raze"
+    },
+    {
+      "name": "Nutts",
+      "activity": "Offline",
+      "status": "Offline",
+      "avatar": "raze"
+    },
+    {
+      "name": "Djeeeeker",
+      "activity": "Offline",
+      "status": "Offline",
+      "avatar": "brimstone"
+    },
+    {
+      "name": "Menada",
+      "activity": "Spike Run",
+      "status": "Online",
+      "avatar": "phoenix"
+    },
+    {
+      "name": "dimati199",
+      "activity": "Competitive",
+      "status": "Online",
+      "avatar": "sage"
+    },
+    {
+      "name": "M9sko",
+      "activity": "Competitive",
+      "status": "Online",
+      "avatar": "sova"
+    },
+    {
+      "name": "ClauserII",
+      "activity": "Offline",
+      "status": "Offline",
+      "avatar": "viper"
+    },
+    {
+      "name": "FOXIlove",
+      "activity": "Casual",
+      "status": "Online",
+      "avatar": "cypher"
+    },
+    {
+      "name": "Krenechka",
+      "activity": "Casual",
+      "status": "Online",
+      "avatar": "reyna"
+    },
+    {
+      "name": "dimon6208",
+      "activity": "Spike Run",
+      "status": "Online",
+      "avatar": "breach"
+    },
+    {
+      "name": "RevBANK",
+      "activity": "Competitive",
+      "status": "Online",
+      "avatar": "omen"
+    },
+    {
+      "name": "Latinka",
+      "activity": "Competitive",
+      "status": "Online",
+      "avatar": "skye"
+    }
   ]
 }

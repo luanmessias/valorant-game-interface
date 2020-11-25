@@ -37,8 +37,8 @@ export const Container = styled.nav`
         display: flex;
         justify-content: center;
         align-items: center;
-        img {
-          margin-right: 20px;
+        svg {
+          margin-right: 10px;
         }
         span {
           font-size: 15px;
@@ -56,7 +56,7 @@ export const Container = styled.nav`
             margin-top: 3px;
           }
         }
-        img {
+        svg {
           margin-right: 10px;
         }
         span {
