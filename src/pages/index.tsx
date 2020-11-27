@@ -1,7 +1,7 @@
 import React from 'react'
 import FrontLogo from '@/molecules/FrontLogo'
 import AsideLeftHome from '@/organisms/AsideLeftHome'
-import AsideRightHome from '@/organisms/AsideRightHome'
+import FriendsList from '@/organisms/FriendsList'
 import { Container } from '@/pageStyles/home'
 
 const Home: React.FC = () => {
@@ -9,7 +9,7 @@ const Home: React.FC = () => {
     <Container>
       <AsideLeftHome />
       <FrontLogo />
-      <AsideRightHome />
+      <FriendsList />
     </Container>
   )
 }
