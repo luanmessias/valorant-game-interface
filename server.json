@@ -146,6 +146,36 @@
       "activity": "Competitive",
       "status": "Online",
       "avatar": "skye"
+    },
+    {
+      "name": "JIbiCbiu",
+      "activity": "Offline",
+      "status": "Offline",
+      "avatar": "brimstone"
+    },
+    {
+      "name": "Camypai",
+      "activity": "Spike Run",
+      "status": "Offline",
+      "avatar": "phoenix"
+    },
+    {
+      "name": "Fresska",
+      "activity": "Competitive",
+      "status": "Offline",
+      "avatar": "sage"
+    },
+    {
+      "name": "Bodxi",
+      "activity": "Competitive",
+      "status": "Offline",
+      "avatar": "sova"
+    },
+    {
+      "name": "lovekida",
+      "activity": "Offline",
+      "status": "Offline",
+      "avatar": "viper"
     }
   ]
 }

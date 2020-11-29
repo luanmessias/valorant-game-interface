@@ -1,7 +1,16 @@
-import React from 'react'
-import { Container } from './Styles'
+import React, { useState } from 'react'
+import {
+  Container,
+  ProfilesContent,
+  OptionsContent,
+  AccordionProfiles,
+  ProfileMenu,
+  ToggleMenu,
+  Arrow
+} from './Styles'
 import ProfileCard from '@/molecules/ProfileCard'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
+import FriendsNetworkSVG from '@/svg/friends-network.svg'
 
 interface IProfile {
   name: string
@@ -11,6 +20,9 @@ interface IProfile {
 }
 
 const FriendsList: React.FC = () => {
+  const [onlinePanel, setOnlinePanel] = useState(false)
+  const [offlinePanel, setOfflinePanel] = useState(false)
+
   const { data } = SwrFetchHook<IProfile[]>('friends')
 
   if (!data) {
@@ -27,25 +39,52 @@ const FriendsList: React.FC = () => {
     return friends.status === 'Offline'
   })
 
+  const toggleSwitchOnline = () => setOnlinePanel(!onlinePanel)
+  const toggleSwitchOffline = () => setOfflinePanel(!offlinePanel)
+
   return (
     <Container>
-      <ProfileCard profName={mainProfile.name} />
-      <div>asdasdasd</div>
-      <ul>
-        {onlineFriends.map(online => (
-          <li key={online.name}>
-            <ProfileCard profName={online.name} />
+      <ToggleMenu>
+        <FriendsNetworkSVG />
+      </ToggleMenu>
+      <ProfilesContent>
+        <ProfileCard profName={mainProfile.name} />
+        <AccordionProfiles>
+          <li>
+            <ProfileMenu data-active={onlinePanel} onClick={toggleSwitchOnline}>
+              <div className="numbers">{onlineFriends.length}</div>
+              <strong>ONLINE</strong>
+              <Arrow data-active={onlinePanel} />
+            </ProfileMenu>
+            <ul>
+              {onlineFriends.map(online => (
+                <li key={online.name}>
+                  <ProfileCard profName={online.name} />
+                </li>
+              ))}
+            </ul>
           </li>
-        ))}
-      </ul>
-      <div>asdasdasd</div>
-      <ul>
-        {offlineFriends.map(offline => (
-          <li key={offline.name}>
-            <ProfileCard profName={offline.name} />
+
+          <li>
+            <ProfileMenu
+              data-active={offlinePanel}
+              onClick={toggleSwitchOffline}
+            >
+              <div className="numbers">{offlineFriends.length}</div>
+              <strong>OFFLINE</strong>
+              <Arrow data-active={offlinePanel} />
+            </ProfileMenu>
+            <ul>
+              {offlineFriends.map(offline => (
+                <li key={offline.name}>
+                  <ProfileCard profName={offline.name} />
+                </li>
+              ))}
+            </ul>
           </li>
-        ))}
-      </ul>
+        </AccordionProfiles>
+      </ProfilesContent>
+      <OptionsContent></OptionsContent>
     </Container>
   )
 }
