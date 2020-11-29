@@ -28,7 +28,7 @@ export const AccordionProfiles = styled.ul`
   > li {
     > ul {
       list-style: none;
-      max-height: 300px;
+      max-height: 355px;
       overflow-y: auto;
       overflow-x: hidden;
       transition: all 0.3s;
