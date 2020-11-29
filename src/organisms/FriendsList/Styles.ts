@@ -2,16 +2,23 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: rgba(47, 54, 60, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   margin-left: auto;
   margin-right: 0px;
   width: 250px;
   height: 100%;
+  right: 0;
+  transition: all 0.5s;
+
+  &[data-active='true'] {
+    right: -250px;
+  }
 `
 
 export const ProfilesContent = styled.div``
-
-export const OptionsContent = styled.div``
 
 export const ProfileColapseMenu = styled.div``
 
@@ -21,7 +28,7 @@ export const AccordionProfiles = styled.ul`
   > li {
     > ul {
       list-style: none;
-      max-height: 355px;
+      max-height: 300px;
       overflow-y: auto;
       overflow-x: hidden;
       transition: all 0.3s;
@@ -89,12 +96,44 @@ export const ProfileMenu = styled.div`
 
 export const ToggleMenu = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 55px;
   height: 55px;
   background-color: rgba(47, 54, 60, 0.9);
   position: absolute;
   left: -55px;
+  cursor: pointer;
+
+  svg {
+    position: absolute;
+    transition: all 1s;
+
+    &.svgFriends {
+      opacity: 0;
+      transform: scale(5);
+    }
+
+    &.svgClose {
+      opacity: 1;
+      fill: #dd555c;
+      transform: scale(1);
+    }
+  }
+
+  &[data-active='true'] {
+    .svgFriends {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .svgClose {
+      opacity: 0;
+      transform: scale(5);
+    }
+  }
 `
+
 export const Arrow = styled.div`
   display: flex;
   justify-content: center;
@@ -127,6 +166,182 @@ export const Arrow = styled.div`
 
     &:before {
       transform: rotate(56deg) translateX(3px) translateY(-1px);
+    }
+  }
+`
+
+export const OptionsContent = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #24292e;
+  width: 100%;
+  height: 45px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    transition: all 0.2s;
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+    }
+
+    &[data-active='true'] {
+      background: #000;
+
+      svg {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  svg {
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .svgAddFriend {
+  }
+
+  .svgSearch {
+  }
+`
+
+export const AddFriend = styled.div`
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  margin-top: auto;
+  border-top: 1px solid #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  bottom: 45px;
+  right: -300px;
+  transition: all 0.5s;
+
+  &[data-active='true'] {
+    opacity: 1;
+    right: 0%;
+  }
+
+  div {
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    left: -30px;
+    top: 0;
+    position: absolute;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #dd555c;
+    }
+  }
+
+  span {
+    font-size: 15px;
+    color: #555656;
+  }
+
+  input {
+    border: 0px;
+    border-bottom: 1px solid #fff;
+    padding: 0px;
+    background-color: transparent;
+    width: 80px;
+    height: 35px;
+    color: #fff;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  svg {
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+`
+
+export const SearchFriend = styled.div`
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  margin-top: auto;
+  border-top: 1px solid #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  bottom: 45px;
+  right: -300px;
+  transition: all 0.5s;
+
+  &[data-active='true'] {
+    opacity: 1;
+    right: 0px;
+  }
+
+  div {
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    left: -30px;
+    top: 0;
+    position: absolute;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #dd555c;
+    }
+  }
+
+  input {
+    border: 0px;
+    border-bottom: 1px solid #fff;
+    padding: 0px;
+    background-color: transparent;
+    width: 90%;
+    height: 35px;
+    color: #fff;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  svg {
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
     }
   }
 `

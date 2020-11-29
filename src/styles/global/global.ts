@@ -16,6 +16,7 @@ body,
 #__next{
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 #__next {
   background-image: url('/img/home_bg.jpg');
