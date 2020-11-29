@@ -85,12 +85,28 @@ export const Container = styled.nav`
         justify-content: center;
         align-items: center;
         margin: 0;
+        transition: all 0.3s;
+
+        svg {
+          transition: all 0.3s;
+        }
+
         a {
           position: relative;
           z-index: 1;
           font-size: 23px;
           font-weight: 700;
           color: #000;
+        }
+
+        &:hover {
+          a {
+            color: #fff;
+          }
+          svg {
+            fill: #000;
+            opacity: 1;
+          }
         }
       }
 
