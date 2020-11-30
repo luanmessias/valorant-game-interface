@@ -7,7 +7,7 @@ export const Container = styled.div`
   box-sizing: border-box;
   padding: 2px;
   background-color: rgba(255, 255, 255, 0.2);
-  margin: 5px 0px;
+  margin: 20px 0px;
 
   .dot {
     width: 2px;

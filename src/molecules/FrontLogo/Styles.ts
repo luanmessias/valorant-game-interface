@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 1;
 `
 
 export const CurrentAct = styled.span`

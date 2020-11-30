@@ -1,4 +1,5 @@
-import { Container, Content } from './Styles';
+import React from 'react'
+import { Container, Content } from './Styles'
 
 const UpdateNotes: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const UpdateNotes: React.FC = () => {
         <span>1.12</span>
       </Content>
     </Container>
-  );
+  )
 }
 
 export default UpdateNotes

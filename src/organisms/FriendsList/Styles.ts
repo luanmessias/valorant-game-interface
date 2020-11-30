@@ -226,14 +226,14 @@ export const AddFriend = styled.div`
   align-items: center;
   opacity: 0;
   position: absolute;
-  bottom: 45px;
-  right: -300px;
+  bottom: -45px;
+
   transition: all 0.5s;
   z-index: 2;
 
   &[data-active='true'] {
     opacity: 1;
-    right: 0%;
+    bottom: 45px;
   }
 
   div {
@@ -296,14 +296,13 @@ export const SearchFriend = styled.div`
   align-items: center;
   opacity: 0;
   position: absolute;
-  bottom: 45px;
-  right: -300px;
+  bottom: -45px;
   transition: all 0.5s;
   z-index: 2;
 
   &[data-active='true'] {
     opacity: 1;
-    right: 0px;
+    bottom: 45px;
   }
 
   div {
