@@ -5,16 +5,17 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
+  position: absolute;
   margin-left: auto;
   margin-right: 0px;
   width: 250px;
-  height: 100%;
+  height: calc(100% - 49px);
   right: 0;
+  bottom: 0;
   transition: all 0.5s;
 
-  &[data-active='true'] {
-    right: -250px;
+  &[data-active='false'] {
+    right: -195px;
   }
 `
 
@@ -68,17 +69,15 @@ export const ProfileMenu = styled.div`
   cursor: pointer;
 
   .numbers {
-    width: 30px;
+    width: 38px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    margin-right: 10px;
-    font-size: 15px;
+    margin-right: 15px;
+    font-size: 18px;
     color: #fff;
     font-weight: 500;
-    background-color: rgba(165, 165, 165, 0.3);
   }
 
   > strong {
@@ -98,39 +97,39 @@ export const ToggleMenu = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55px;
-  height: 55px;
-  background-color: rgba(47, 54, 60, 0.9);
+  width: 110%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(195, 198, 233, 0.5);
   position: absolute;
-  left: -55px;
+  right: 0px;
+  top: 0;
   cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 
   svg {
     position: absolute;
-    transition: all 1s;
-
-    &.svgFriends {
-      opacity: 0;
-      transform: scale(5);
-    }
-
-    &.svgClose {
-      opacity: 1;
-      fill: #dd555c;
-      transform: scale(1);
-    }
+    transition: all 0.5s;
+    left: 2px;
   }
 
   &[data-active='true'] {
-    .svgFriends {
-      opacity: 1;
-      transform: scale(1);
-    }
+    width: 10%;
+    left: -10%;
 
-    .svgClose {
-      opacity: 0;
-      transform: scale(5);
+    svg {
+      transform: rotate(180deg);
     }
+  }
+
+  &[data-ishome='true'] {
+    display: none;
   }
 `
 
@@ -177,6 +176,7 @@ export const OptionsContent = styled.div`
   background-color: #24292e;
   width: 100%;
   height: 45px;
+  transition: all 0.5s;
 
   div {
     display: flex;
@@ -229,6 +229,7 @@ export const AddFriend = styled.div`
   bottom: 45px;
   right: -300px;
   transition: all 0.5s;
+  z-index: 2;
 
   &[data-active='true'] {
     opacity: 1;
@@ -298,6 +299,7 @@ export const SearchFriend = styled.div`
   bottom: 45px;
   right: -300px;
   transition: all 0.5s;
+  z-index: 2;
 
   &[data-active='true'] {
     opacity: 1;

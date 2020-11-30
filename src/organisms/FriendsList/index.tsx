@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import {
   Container,
   ProfilesContent,
@@ -12,10 +13,10 @@ import {
 } from './Styles'
 import ProfileCard from '@/molecules/ProfileCard'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
-import FriendsNetworkSVG from '@/svg/friends-network.svg'
-import CloseSVG from '@/svg/close.svg'
+import ArrowLeft from '@/svg/arrow-left.svg'
 import AddFriendSVG from '@/svg/add-friend.svg'
 import SearchSVG from '@/svg/search.svg'
+import CloseSVG from '@/svg/close.svg'
 import PlusButtonSVG from '@/svg/plus-button.svg'
 
 interface IProfile {
@@ -26,11 +27,29 @@ interface IProfile {
 }
 
 const FriendsList: React.FC = () => {
+  const [friendList, setFriendList] = useState(true)
   const [onlinePanel, setOnlinePanel] = useState(false)
   const [offlinePanel, setOfflinePanel] = useState(false)
-  const [friendList, setFriendList] = useState(false)
   const [addFriend, setAddFriend] = useState(false)
   const [searchFriend, setSearchFriend] = useState(false)
+  const [isHome, setIsHome] = useState(true)
+
+  const router = useRouter()
+
+  const handleRouteChange = url => {
+    if (url !== '/') {
+      setFriendList(!friendList)
+      setIsHome(!isHome)
+    } else {
+      setFriendList(friendList)
+      setIsHome(isHome)
+    }
+  }
+
+  useEffect(() => {
+    handleRouteChange(router.pathname)
+    return router.events.on('routeChangeComplete', handleRouteChange)
+  }, [])
 
   const { data } = SwrFetchHook<IProfile[]>('friends')
 
@@ -81,9 +100,12 @@ const FriendsList: React.FC = () => {
 
   return (
     <Container data-active={friendList}>
-      <ToggleMenu data-active={friendList} onClick={toggleFriendlist}>
-        <FriendsNetworkSVG className="svgFriends" />
-        <CloseSVG className="svgClose" />
+      <ToggleMenu
+        onClick={toggleFriendlist}
+        data-active={friendList}
+        data-ishome={isHome}
+      >
+        <ArrowLeft />
       </ToggleMenu>
 
       <ProfilesContent>
@@ -141,7 +163,7 @@ const FriendsList: React.FC = () => {
         <input type="text" placeholder="RIOT ID" />
       </SearchFriend>
 
-      <OptionsContent>
+      <OptionsContent data-ishome={isHome}>
         <div data-active={addFriend}>
           <AddFriendSVG onClick={toggleAddFriendBox} className="svgAddFriend" />
         </div>

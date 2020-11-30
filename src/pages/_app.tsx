@@ -5,6 +5,7 @@ import GlobalStyles, { Main } from '../styles/global/global'
 import MainNav from '../molecules/MainNav'
 import { ThemeProvider } from 'styled-components'
 import theme from '../styles/theme'
+import FriendsList from '@/organisms/FriendsList'
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -13,6 +14,8 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <MainNav />
 
         <Component {...pageProps} />
+
+        <FriendsList />
 
         <GlobalNormalize />
         <GlobalStyles />
