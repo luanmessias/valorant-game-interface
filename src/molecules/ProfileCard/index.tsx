@@ -1,7 +1,6 @@
 import React from 'react'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
 import { Container, ProfileInfo, ProfileStatus, ProfileName } from './Styles'
-import Image from 'next/image'
 import SendMsgSVG from '@/svg/send-message.svg'
 
 interface IProfName {
@@ -43,7 +42,7 @@ const profileCard: React.FC<IProfName> = ({ profName }) => {
   return (
     <Container>
       <ProfileStatus ProfStatus={setStatusColor()}>
-        <Image
+        <img
           src={`/img/profile-avatars/${profile.avatar}.png`}
           width="45"
           height="45"
