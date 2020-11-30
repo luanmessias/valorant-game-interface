@@ -5,7 +5,7 @@ import { Container } from './Styles'
 
 type linkProps = LinkHTMLAttributes<HTMLLinkElement>
 
-const NavLink: React.FC = ({ href, children }: linkProps) => {
+const NavLink: React.FC<linkProps> = ({ href, children }) => {
   return (
     <Link href={href} passHref>
       <Container>{children}</Container>
