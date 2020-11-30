@@ -44,7 +44,7 @@ const profileCard: React.FC<IProfName> = ({ profName }) => {
     <Container>
       <ProfileStatus ProfStatus={setStatusColor()}>
         <Image
-          src={`/img/v_avatar/${profile.avatar}.png`}
+          src={`/img/profile-avatars/${profile.avatar}.png`}
           width="45"
           height="45"
         />
