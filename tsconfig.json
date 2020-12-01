@@ -22,6 +22,7 @@
       "@/fonts/*": ["./public/fonts/*"],
       "@/svg/*": ["./public/svg/*"],
       "@/img/*": ["./public/img/*"],
+      "@/context/*":["./src/context/*"],
       "@/videos/*": ["./public/videos/*"],
       "@/atoms/*": ["./src/atoms/*"],
       "@/hooks/*": ["./src/hooks/*"],
@@ -29,7 +30,7 @@
       "@/organisms/*": ["./src/organisms/*"],
       "@/pages/*": ["./src/pages/*"],
       "@/globalStyles/*": ["./src/styles/*"],
-      "@/pageStyles/*":["./src/styles/pages/*"]
+      "@/pageStyles/*":["./src/styles/pages/*"],
     }
   },
   "include": [
