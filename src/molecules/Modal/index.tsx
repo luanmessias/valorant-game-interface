@@ -14,7 +14,7 @@ const contentModal = {
     opacity: 0
   },
   visible: {
-    y: '200px',
+    y: '0',
     opacity: 1,
     transition: { delay: 0.5 }
   }
@@ -22,9 +22,8 @@ const contentModal = {
 
 const Modal: React.FC = () => {
   const {
-    modalState: { message, visible },
-    closeModal
-  } = useModalContext()
+    modalState: { message, visible }
+  }: any = useModalContext()
 
   return (
     <AnimatePresence exitBeforeEnter onExitComplete={visible}>
@@ -35,9 +34,7 @@ const Modal: React.FC = () => {
           initial="hidden"
           exit="hidden"
         >
-          <Content variants={contentModal} onClick={closeModal}>
-            {message}
-          </Content>
+          <Content variants={contentModal}>{message}</Content>
         </Container>
       )}
     </AnimatePresence>

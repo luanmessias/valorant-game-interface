@@ -9,6 +9,7 @@ import ValorantPointsSvg from '@/svg/valorant-points.svg'
 import RadiantPointsSvg from '@/svg/radiant-points.svg'
 import { Container, SvgPlay } from './Styles'
 import { useModalContext } from '@/context/Modal'
+import ConfigDialog from '@/molecules/ConfigDialog'
 
 interface INavItem {
   id: string
@@ -64,7 +65,7 @@ const MainNav: React.FC = () => {
             </div>
           </li>
 
-          <li className="settings" onClick={() => openModal(<ClockIconSvg />)}>
+          <li className="settings" onClick={() => openModal(<ConfigDialog />)}>
             <GearConfig width="40px" height="40px" />
           </li>
         </ul>
