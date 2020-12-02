@@ -1,13 +1,7 @@
 import React from 'react'
 import { Container, Content } from './Styles'
-import { motion, AnimatePresence } from 'framer-motion'
-
-export interface IModalProps {
-  children?: React.ReactNode
-  onClick?: any
-  showModal: boolean
-  setShowModal: any
-}
+import { AnimatePresence } from 'framer-motion'
+import { useModalContext } from '@/context/Modal'
 
 const backdrop = {
   visible: { opacity: 1 },
@@ -26,22 +20,24 @@ const contentModal = {
   }
 }
 
-const Modal: React.FC<IModalProps> = ({
-  showModal,
-  setShowModal,
-  children
-}) => {
+const Modal: React.FC = () => {
+  const {
+    modalState: { message, visible },
+    closeModal
+  } = useModalContext()
+
   return (
-    <AnimatePresence exitBeforeEnter onExitComplete={() => setShowModal(false)}>
-      {showModal && (
+    <AnimatePresence exitBeforeEnter onExitComplete={visible}>
+      {visible && (
         <Container
           variants={backdrop}
           animate="visible"
           initial="hidden"
           exit="hidden"
-          onClick={() => setShowModal(false)}
         >
-          <Content variants={contentModal}>{children}</Content>
+          <Content variants={contentModal} onClick={closeModal}>
+            {message}
+          </Content>
         </Container>
       )}
     </AnimatePresence>
@@ -49,18 +45,3 @@ const Modal: React.FC<IModalProps> = ({
 }
 
 export default Modal
-
-// export interface IModalProps {
-//   children?: React.ReactNode
-//   onClick?: any
-// }
-
-// const Modal: React.FC<IModalProps> = ({ children, onClick, ...rest }) => {
-//   return (
-//     <Container {...rest} onClick={onClick}>
-//       {children}
-//     </Container>
-//   )
-// }
-
-// export default Modal

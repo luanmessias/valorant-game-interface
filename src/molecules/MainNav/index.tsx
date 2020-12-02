@@ -8,13 +8,7 @@ import MainNavCenterSvg from '@/svg/main-nav-center.svg'
 import ValorantPointsSvg from '@/svg/valorant-points.svg'
 import RadiantPointsSvg from '@/svg/radiant-points.svg'
 import { Container, SvgPlay } from './Styles'
-
-export interface IModalProps {
-  children?: React.ReactNode
-  onClick?: any
-  showModal: boolean
-  setShowModal: any
-}
+import { useModalContext } from '@/context/Modal'
 
 interface INavItem {
   id: string
@@ -22,8 +16,9 @@ interface INavItem {
   title: string
 }
 
-const MainNav: React.FC<IModalProps> = ({ showModal, setShowModal }) => {
+const MainNav: React.FC = () => {
   const { data } = SwrFetchHook<INavItem[]>('categories')
+  const { openModal }: any = useModalContext()
 
   if (!data) {
     return <span>Carregando...</span>
@@ -69,7 +64,7 @@ const MainNav: React.FC<IModalProps> = ({ showModal, setShowModal }) => {
             </div>
           </li>
 
-          <li className="settings" onClick={() => setShowModal(!showModal)}>
+          <li className="settings" onClick={() => openModal(<ClockIconSvg />)}>
             <GearConfig width="40px" height="40px" />
           </li>
         </ul>
