@@ -104,8 +104,8 @@ export const Container = styled.nav`
             color: #fff;
           }
           svg {
-            fill: #000;
-            opacity: 1;
+            fill: #fff;
+            opacity: 0.5;
           }
         }
       }
