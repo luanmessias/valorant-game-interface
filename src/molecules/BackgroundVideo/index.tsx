@@ -10,9 +10,10 @@ import {
 } from './Styles'
 import VideoOnSVG from '@/svg/video-on.svg'
 import VideoOffSVG from '@/svg/video-off.svg'
+import { useBGVideoContext } from '@/context/BackgroundVideo'
 
 const BackgroundVideo: React.FC = () => {
-  const [playVideo, setpLayVideo] = useState(true)
+  const { playVideo, setpLayVideo }: any = useBGVideoContext()
 
   const switchVideoPlayer = () => {
     return setpLayVideo(!playVideo)

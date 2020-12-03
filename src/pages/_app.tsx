@@ -9,24 +9,28 @@ import FriendsList from '@/organisms/FriendsList'
 import { ModalProvider } from '@/context/Modal'
 import Modal from '@/molecules/Modal'
 import { useRouter } from 'next/router'
+import { BGVideoProvider } from '@/context/BackgroundVideo'
+
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const currentRoute = useRouter().pathname
 
   return (
     <ModalProvider>
       <ThemeProvider theme={theme}>
-        <Modal />
-        <Main>
-          <MainNav />
+        <BGVideoProvider>
+          <Modal />
+          <Main>
+            <MainNav />
 
-          <Component {...pageProps} />
+            <Component {...pageProps} />
 
-          <FriendsList />
+            <FriendsList />
 
-          <GlobalNormalize />
-          <GlobalStyles />
-        </Main>
-        <BGImage data-route={currentRoute} />
+            <GlobalNormalize />
+            <GlobalStyles />
+          </Main>
+          <BGImage data-route={currentRoute} />
+        </BGVideoProvider>
       </ThemeProvider>
     </ModalProvider>
   )
