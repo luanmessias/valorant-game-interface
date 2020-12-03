@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import { motion } from 'framer-motion'
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -8,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  background-color: #000;
 }
 
 html,
@@ -21,6 +21,12 @@ body,
 `
 
 export const Main = styled.main`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`
+export const Wrapper = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: flex;
@@ -39,7 +45,7 @@ export const BGImage = styled.div`
   background-position: center;
   z-index: -1;
   filter: blur(10px);
-  transform: scale(1.1);
+  transform: scale(1.5);
   transition: all 0.5s;
 
   &[data-route='/'] {
@@ -47,4 +53,5 @@ export const BGImage = styled.div`
     transform: scale(1);
   }
 `
+
 export default GlobalStyle

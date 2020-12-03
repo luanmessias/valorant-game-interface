@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.nav`
   display: flex;
-  height: 55px;
+  height: 52px;
   width: 100%;
 
   > ul {
@@ -111,10 +111,37 @@ export const Container = styled.nav`
       }
 
       &.settings {
-        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 35px;
+        height: 35px;
         position: absolute;
         right: 16px;
         margin: 0;
+        cursor: pointer;
+        transition: all 0.5s;
+        border: 1px solid #fff;
+        padding: 5px;
+        border-radius: 50%;
+
+        svg {
+          transition: all 0.5s;
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          padding: 0px;
+          border: 0px;
+          svg {
+            transform: rotate(360deg);
+            fill: #dd555c;
+            width: 45px;
+            height: 45px;
+          }
+        }
       }
     }
   }

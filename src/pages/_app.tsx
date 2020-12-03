@@ -1,37 +1,70 @@
 import React from 'react'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
-import GlobalNormalize from '../styles/global/normalize'
-import GlobalStyles, { Main, BGImage } from '../styles/global/global'
 import MainNav from '../molecules/MainNav'
 import { ThemeProvider } from 'styled-components'
 import theme from '../styles/theme'
 import FriendsList from '@/organisms/FriendsList'
 import { ModalProvider } from '@/context/Modal'
 import Modal from '@/molecules/Modal'
-import { useRouter } from 'next/router'
 import { BGVideoProvider } from '@/context/BackgroundVideo'
+import { AnimatePresence } from 'framer-motion'
+import GlobalNormalize from '../styles/global/normalize'
+import GlobalStyles, { Main, BGImage, Wrapper } from '../styles/global/global'
 
-export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  const currentRoute = useRouter().pathname
+export default function MyApp({
+  Component,
+  pageProps,
+  router
+}: AppProps): JSX.Element {
+  const duration = 0.35
+  const delay = 0
+
+  const variants = {
+    initial: {
+      opacity: 0
+    },
+    enter: {
+      opacity: 1,
+      transition: {
+        duration: duration,
+        delay: delay,
+        when: 'beforeChildren'
+      }
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: duration }
+    }
+  }
 
   return (
-    <ModalProvider>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <ModalProvider>
         <BGVideoProvider>
           <Modal />
           <Main>
             <MainNav />
 
-            <Component {...pageProps} />
+            <AnimatePresence exitBeforeEnter>
+              <Wrapper
+                key={router.route}
+                variants={variants}
+                initial="initial"
+                animate="enter"
+                exit="exit"
+              >
+                <Component {...pageProps} key={router.route} />
+              </Wrapper>
+            </AnimatePresence>
 
             <FriendsList />
 
             <GlobalNormalize />
             <GlobalStyles />
           </Main>
-          <BGImage data-route={currentRoute} />
+          <BGImage data-route={router.route} />
         </BGVideoProvider>
-      </ThemeProvider>
-    </ModalProvider>
+      </ModalProvider>
+    </ThemeProvider>
   )
 }
