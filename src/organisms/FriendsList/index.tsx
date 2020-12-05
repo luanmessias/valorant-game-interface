@@ -29,7 +29,7 @@ interface IProfile {
 const FriendsList: React.FC = () => {
   const [friendList, setFriendList] = useState(true)
   const [onlinePanel, setOnlinePanel] = useState(false)
-  const [offlinePanel, setOfflinePanel] = useState(false)
+  const [offlinePanel, setOfflinePanel] = useState(true)
   const [addFriend, setAddFriend] = useState(false)
   const [searchFriend, setSearchFriend] = useState(false)
   const [isHome, setIsHome] = useState(true)
@@ -67,8 +67,19 @@ const FriendsList: React.FC = () => {
     return friends.status === 'Offline'
   })
 
-  const toggleSwitchOnline = () => setOnlinePanel(!onlinePanel)
-  const toggleSwitchOffline = () => setOfflinePanel(!offlinePanel)
+  const toggleSwitchOnline = () => {
+    if (onlinePanel && !offlinePanel) {
+      setOfflinePanel(!offlinePanel)
+    }
+
+    setOnlinePanel(!onlinePanel)
+  }
+  const toggleSwitchOffline = () => {
+    if (!onlinePanel && offlinePanel) {
+      setOnlinePanel(!onlinePanel)
+    }
+    setOfflinePanel(!offlinePanel)
+  }
 
   const toggleFriendlist = () => {
     if (searchFriend) {
