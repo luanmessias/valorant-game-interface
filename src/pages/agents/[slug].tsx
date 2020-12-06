@@ -36,12 +36,14 @@ interface IAgents {
   ]
 }
 
-const Agents: React.FC = () => {
+const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
   const [changeArt, setChangeArt] = useState(true)
   const agents = SwrFetchHook<IAgents[]>('agents').data
   const roles = SwrFetchHook<IRoles[]>('roles').data
   const router = useRouter()
-  const agent = router.query.slug
+  const agentImageToRender = String(
+    changeArt ? `${router.query.slug}_3d` : router.query.slug
+  )
 
   if (!agents) {
     return <p>carregando...</p>
@@ -63,10 +65,7 @@ const Agents: React.FC = () => {
               3D
             </Art3D>
           </ArtToggle>
-          <ArtContent
-            agentName={changeArt ? `${agent}_3d` : agent}
-            data-art={changeArt}
-          />
+          <ArtContent AgentName={agentImageToRender} data-art={changeArt} />
         </PhotoCont>
         <AbilitiesCont />
 

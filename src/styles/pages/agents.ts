@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
-interface IagentName {
-  agentName: string
-  artType: string
+type AgentNamePropTypes = {
+  AgentName: string
 }
 
 export const Container = styled.div`
@@ -42,10 +41,10 @@ export const PhotoCont = styled.div`
   position: relative;
 `
 
-export const ArtContent = styled.div<IagentName>`
+export const ArtContent = styled.div<AgentNamePropTypes>`
   flex: 1;
   max-width: 600px;
-  background-image: url('/img/agents/${props => props.agentName}.png');
+  background-image: url('/img/agents/${props => props.AgentName}.png');
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
