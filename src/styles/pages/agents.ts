@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 
-type AgentNamePropTypes = {
-  AgentName: string
+type ActiveAgentPropTypes = {
+  ActiveAgent: string
+}
+
+type AgentListItemPropTypes = {
+  AgentListItem: string
 }
 
 export const Container = styled.div`
@@ -10,6 +14,7 @@ export const Container = styled.div`
   height: 100%;
   position: relative;
 `
+
 export const ReturnBtContainer = styled.div`
   position: absolute;
   left: 35px;
@@ -18,22 +23,27 @@ export const ReturnBtContainer = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
-  width: calc(100vw - 150px);
+  width: calc(100vw - 350px);
   height: calc(100vh - 150px);
   position: absolute;
   bottom: 0;
   left: 30px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
 
   > div {
     display: flex;
     height: 100%;
   }
 `
+
 export const NameCont = styled.div`
   width: 500px;
 `
+
 export const PhotoCont = styled.div`
   display: flex;
   flex: 1;
@@ -41,14 +51,22 @@ export const PhotoCont = styled.div`
   position: relative;
 `
 
-export const ArtContent = styled.div<AgentNamePropTypes>`
+export const ArtContent = styled.div<ActiveAgentPropTypes>`
   flex: 1;
   max-width: 600px;
-  background-image: url('/img/agents/${props => props.AgentName}.png');
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
+
+  &[data-3dart='true'] {
+    background-image: url('/img/agents/${props => props.ActiveAgent}_3d.png');
+  }
+
+  &[data-3dart='false'] {
+    background-image: url('/img/agents/${props => props.ActiveAgent}.png');
+  }
 `
+
 export const ArtToggle = styled.div`
   display: flex;
   justify-content: space-between;
@@ -89,12 +107,14 @@ export const ArtToggle = styled.div`
     }
   }
 `
+
 export const Art2D = styled.div`
   border-top-left-radius: 50px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 0px;
 `
+
 export const Art3D = styled.div`
   border-top-left-radius: 0px;
   border-top-right-radius: 50px;
@@ -106,16 +126,252 @@ export const AbilitiesCont = styled.div`
   width: 450px;
 `
 
-export const CharacterList = styled.ul`
+export const AgentListContainer = styled.div`
+  display: flex;
+  justify-content: center;
   position: absolute;
-  left: 0;
-  bottom: 0;
+  bottom: 0px;
+  height: 200px;
+  width: 100%;
+  > svg {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+  }
+`
 
-  li {
+export const AgentList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #d1b15e;
+  width: auto;
+  padding-top: 10px;
+`
+
+export const AgentListItem = styled.li`
+  list-style: none;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #81ccba;
+  margin: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  > svg {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    transition: all 0.3s;
+  }
+
+  > div {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #262b33;
+    background-color: rgba(95, 95, 95, 0.7);
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      background-color: rgba(129, 204, 186, 1);
+      position: absolute;
+      transition: all 0.3s;
+      &--TL {
+        top: 0px;
+        left: 0px;
+      }
+      &--TR {
+        top: 0px;
+        right: 0px;
+      }
+      &--BL {
+        bottom: 0px;
+        left: 0px;
+      }
+      &--BR {
+        bottom: 0px;
+        right: 0px;
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.25);
+    border-color: #d1b15e;
+
+    .dot {
+      background-color: #d1b15e;
+      &--TL {
+        width: 100%;
+      }
+      &--TR {
+        height: 100%;
+      }
+      &--BL {
+        height: 100%;
+      }
+      &--BR {
+        width: 100%;
+      }
+    }
+  }
+
+  &[data-active='true'] {
+    transform: scale(1.25);
+    border-color: #d1b15e;
+    background-color: rgba(129, 204, 186, 1);
+
+    .dot {
+      background-color: #d1b15e;
+      &--TL {
+        width: 100%;
+      }
+      &--TR {
+        height: 100%;
+      }
+      &--BL {
+        height: 100%;
+      }
+      &--BR {
+        width: 100%;
+      }
+    }
+  }
+`
+
+export const AgentItemStage = styled.div<AgentListItemPropTypes>`
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+
+  > div {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/agents/${props => props.AgentListItem}.png');
+    background-size: 350px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+
+    &[data-agent='brimstone'] {
+      background-size: 390px;
+      background-position: center -30px;
+    }
+
+    &[data-agent='phoenix'] {
+      background-size: 390px;
+      background-position: -130px -10px;
+    }
+
+    &[data-agent='sage'] {
+      background-size: 350px;
+      background-position: -140px -20px;
+    }
+
+    &[data-agent='viper'] {
+      background-size: 350px;
+      background-position: -120px 0px;
+      background-size: 380px;
+    }
+
+    &[data-agent='reyna'] {
+      background-size: 380px;
+      background-position: -170px -90px;
+    }
+
+    &[data-agent='killjoy'] {
+      background-size: 350px;
+      background-position: -170px -10px;
+    }
+
+    &[data-agent='jett'] {
+      background-size: 350px;
+      background-position: -100px -10px;
+    }
+
+    &[data-agent='raze'] {
+      background-size: 380px;
+      background-position: -140px -40px;
+    }
+
+    &[data-agent='skye'] {
+      background-size: 350px;
+      background-position: -160px -10px;
+    }
+  }
+`
+
+export const AgentInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-size: 96px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #cfbb75;
+    margin-bottom: 45px;
+  }
+  span {
+    color: #828282;
+    font-size: 18px;
+  }
+`
+export const AgentRole = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  span {
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: 20px;
+  }
+`
+export const RoleDescription = styled.div`
+  > div {
+    max-height: 250px;
+    overflow-y: auto;
     padding: 10px;
-    a {
+
+    span {
       font-size: 18px;
+      font-weight: 400;
       color: #fff;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background-color: #000;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 3px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #dd555c;
     }
   }
 `
