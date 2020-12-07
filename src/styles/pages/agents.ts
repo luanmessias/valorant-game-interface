@@ -122,10 +122,6 @@ export const Art3D = styled.div`
   border-bottom-right-radius: 50px;
 `
 
-export const AbilitiesCont = styled.div`
-  width: 450px;
-`
-
 export const AgentListContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -256,57 +252,11 @@ export const AgentItemStage = styled.div<AgentListItemPropTypes>`
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-image: url('/img/agents/${props => props.AgentListItem}.png');
-    background-size: 350px;
-    background-position: center top;
+    background: url('/img/agents_profile/${props => props.AgentListItem}.png');
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     transition: all 0.5s;
-
-    &[data-agent='brimstone'] {
-      background-size: 390px;
-      background-position: center -30px;
-    }
-
-    &[data-agent='phoenix'] {
-      background-size: 390px;
-      background-position: -130px -10px;
-    }
-
-    &[data-agent='sage'] {
-      background-size: 350px;
-      background-position: -140px -20px;
-    }
-
-    &[data-agent='viper'] {
-      background-size: 350px;
-      background-position: -120px 0px;
-      background-size: 380px;
-    }
-
-    &[data-agent='reyna'] {
-      background-size: 380px;
-      background-position: -170px -90px;
-    }
-
-    &[data-agent='killjoy'] {
-      background-size: 350px;
-      background-position: -170px -10px;
-    }
-
-    &[data-agent='jett'] {
-      background-size: 350px;
-      background-position: -100px -10px;
-    }
-
-    &[data-agent='raze'] {
-      background-size: 380px;
-      background-position: -140px -40px;
-    }
-
-    &[data-agent='skye'] {
-      background-size: 350px;
-      background-position: -160px -10px;
-    }
   }
 `
 
@@ -374,4 +324,30 @@ export const RoleDescription = styled.div`
       background: #dd555c;
     }
   }
+`
+
+export const AbilitiesCont = styled.div`
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    display: block;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+`
+
+export const AbilitiesTab = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #fff;
+`
+export const Abilitie = styled.div``
+export const AbilitieDescription = styled.div`
+  width: 100%;
 `

@@ -16,7 +16,10 @@ import {
   AgentItemStage,
   AgentInfo,
   AgentRole,
-  RoleDescription
+  RoleDescription,
+  AbilitiesTab,
+  Abilitie,
+  AbilitieDescription
 } from '@/globalStyles/pages/agents'
 import ReturnButton from '@/atoms/ReturnButton'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
@@ -51,7 +54,11 @@ const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
   const router = useRouter()
   const routeAgent = String(router.query.slug)
 
-  if (!agents && !roles) {
+  if (!agents) {
+    return <p>carregando...</p>
+  }
+
+  if (!roles) {
     return <p>carregando...</p>
   }
 
@@ -60,7 +67,7 @@ const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
       <ReturnBtContainer>
         <ReturnButton />
       </ReturnBtContainer>
-      {agents
+      {(agents || [])
         .filter(a => a.name === routeAgent)
         .map(agent => (
           <Content key={agent.id}>
@@ -78,7 +85,7 @@ const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
                   <span>{agent.role}</span>
                 </AgentRole>
 
-                {roles
+                {(roles || [])
                   .filter(r => r.name === agent.role)
                   .map(role => (
                     <RoleDescription key={role.name}>
@@ -108,13 +115,46 @@ const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
               </ArtToggle>
               <ArtContent ActiveAgent={routeAgent} data-3dart={changeArt} />
             </PhotoCont>
-            <AbilitiesCont />
+            <AbilitiesCont>
+              <h1>special abilities</h1>
+              <AbilitiesTab>
+                <Abilitie>
+                  <Image
+                    src={`/img/abilities/${agent.name}/1.png`}
+                    width={41}
+                    height={41}
+                  />
+                </Abilitie>
+                <Abilitie>
+                  <Image
+                    src={`/img/abilities/${agent.name}/2.png`}
+                    width={41}
+                    height={41}
+                  />
+                </Abilitie>
+                <Abilitie>
+                  <Image
+                    src={`/img/abilities/${agent.name}/3.png`}
+                    width={41}
+                    height={41}
+                  />
+                </Abilitie>
+                <Abilitie>
+                  <Image
+                    src={`/img/abilities/${agent.name}/4.png`}
+                    width={41}
+                    height={41}
+                  />
+                </Abilitie>
+                <AbilitieDescription>lorem ipsun</AbilitieDescription>
+              </AbilitiesTab>
+            </AbilitiesCont>
           </Content>
         ))}
 
       <AgentListContainer>
         <AgentList>
-          {agents.map(agent => {
+          {(agents || []).map(agent => {
             return (
               <Link key={agent.id} href={`/agents/${agent.name}`}>
                 <AgentListItem data-active={routeAgent === agent.name && true}>
