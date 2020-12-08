@@ -18,8 +18,11 @@ import {
   AgentRole,
   RoleDescription,
   AbilitiesTab,
-  Abilitie,
-  AbilitieDescription
+  AbilitieDescription,
+  Ability,
+  AbilityVideo,
+  AbilityVideoContainer,
+  VideoLoading
 } from '@/globalStyles/pages/agents'
 import ReturnButton from '@/atoms/ReturnButton'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
@@ -27,6 +30,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import AgentListArrowSVG from '@/svg/agents-select-arrow.svg'
+import ValorantLogoSVG from '@/svg/valorant-logo.svg'
 
 interface IRoles {
   name: string
@@ -53,6 +57,7 @@ const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
   const roles = SwrFetchHook<IRoles[]>('roles').data
   const router = useRouter()
   const routeAgent = String(router.query.slug)
+  const [activeAbility, setActiveAbility] = useState(1)
 
   if (!agents) {
     return <p>carregando...</p>
@@ -60,6 +65,14 @@ const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
 
   if (!roles) {
     return <p>carregando...</p>
+  }
+
+  const playVideo = (url: string) => {
+    return (
+      <video key={url}>
+        <source src={url} />
+      </video>
+    )
   }
 
   return (
@@ -117,36 +130,63 @@ const Agents: React.FC<IAgents | IRoles> = (): JSX.Element => {
             </PhotoCont>
             <AbilitiesCont>
               <h1>special abilities</h1>
-              <AbilitiesTab>
-                <Abilitie>
+              <AbilitiesTab
+                onLoad={() => setActiveAbility(1)}
+                ActiveAbility={activeAbility}
+              >
+                <Ability onClick={() => setActiveAbility(1)}>
                   <Image
                     src={`/img/abilities/${agent.name}/1.png`}
                     width={41}
                     height={41}
                   />
-                </Abilitie>
-                <Abilitie>
+                </Ability>
+                <Ability onClick={() => setActiveAbility(2)}>
                   <Image
                     src={`/img/abilities/${agent.name}/2.png`}
                     width={41}
                     height={41}
                   />
-                </Abilitie>
-                <Abilitie>
+                </Ability>
+                <Ability onClick={() => setActiveAbility(3)}>
                   <Image
                     src={`/img/abilities/${agent.name}/3.png`}
                     width={41}
                     height={41}
                   />
-                </Abilitie>
-                <Abilitie>
+                </Ability>
+                <Ability onClick={() => setActiveAbility(4)}>
                   <Image
                     src={`/img/abilities/${agent.name}/4.png`}
                     width={41}
                     height={41}
                   />
-                </Abilitie>
-                <AbilitieDescription>lorem ipsun</AbilitieDescription>
+                </Ability>
+                <AbilitieDescription>
+                  <div>
+                    <strong>{agent.abilities[activeAbility - 1].name}</strong>
+                    <span>
+                      {agent.abilities[activeAbility - 1].description}
+                    </span>
+                  </div>
+                  <AbilityVideoContainer>
+                    <AbilityVideo
+                      key={agent.abilities[activeAbility - 1].video}
+                      autoPlay
+                      muted
+                      loop
+                    >
+                      <source
+                        src={agent.abilities[activeAbility - 1].video}
+                        type="video/mp4"
+                      />
+                    </AbilityVideo>
+                    <VideoLoading>
+                      <div></div>
+                      <ValorantLogoSVG />
+                    </VideoLoading>
+                  </AbilityVideoContainer>
+                </AbilitieDescription>
               </AbilitiesTab>
             </AbilitiesCont>
           </Content>

@@ -473,15 +473,15 @@
         },
         {
           "id": 3,
-          "name": "",
-          "description": "",
-          "video": ""
-        },
-        {
-          "id": 4,
           "name": "aftershock",
           "description": "EQUIP a fusion charge. FIRE the charge to set a slow-acting burst through the wall. The burst does heavy damage to anyone caught in its area.",
           "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltfff097ebc7da90e9/5ec840e1e2a559592eb0c0e2/Breach_C_v001_web.mp4"
+        },
+        {
+          "id": 4,
+          "name": "rolling thunder",
+          "description": "EQUIP a seismic charge. FIRE to send a cascading quake through all terrain in a large cone. The quake dazes and knocks up anyone caught in it.",
+          "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt0a47675f8b973fda/5ec840e252c5395e0f2dd038/Breach_X_v001_web.mp4"
         }
       ]
     },
