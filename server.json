@@ -6,11 +6,6 @@
       "title": "inicio"
     },
     {
-      "id": "pass",
-      "url": "/pass",
-      "title": "passe"
-    },
-    {
       "id": "agents",
       "url": "/agents/brimstone",
       "title": "agentes"
@@ -29,11 +24,6 @@
       "id": "collection",
       "url": "/collection",
       "title": "colecao"
-    },
-    {
-      "id": "store",
-      "url": "/store",
-      "title": "loja"
     }
   ],
   "game_modes": [
