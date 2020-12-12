@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container } from './Styles'
+import { Container, PlayerStage, EmptyPlayer, MainPlayer } from './Styles'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
 
 interface IAddFriend {
@@ -15,27 +15,34 @@ interface IProfile {
 }
 
 const AddPlayer: React.FC<IAddFriend> = ({ playerName, dataSize }) => {
+  const [selectedPlayer, setSelectedPLayer] = useState(undefined)
+
   const profile = SwrFetchHook<IProfile[]>('friends').data
 
   if (!profile) {
     return <p>carregando...</p>
   }
 
-  const defaultProfile = profile.filter(p => p.status === 'me')[0].status
-  const [selectedPlayer, setSelectedPLayer] = useState(defaultProfile)
+  console.log(playerName)
 
   return (
     <>
       {playerName &&
         (profile || [])
-          .filter(p => p.name === selectedPlayer)
+          .filter(p => p.name === playerName)
           .map(player => (
-            <Container key={player.name} data-size={dataSize}>
-              <h1>asdasd</h1>
-            </Container>
+            <PlayerStage key={player.name} data-size={dataSize}>
+              <MainPlayer>
+                <h1>{player.name}</h1>
+              </MainPlayer>
+            </PlayerStage>
           ))}
 
-      {!playerName && <Container></Container>}
+      {!playerName && (
+        <PlayerStage data-size={dataSize}>
+          <EmptyPlayer>+</EmptyPlayer>
+        </PlayerStage>
+      )}
     </>
   )
 }
