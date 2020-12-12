@@ -12,3 +12,8 @@ export const ReturnBtContainer = styled.div`
   left: 35px;
   top: 35px;
 `
+
+export const Content = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+`
