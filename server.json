@@ -57,115 +57,134 @@
       "name": "roxfears",
       "activity": "Available",
       "status": "me",
-      "avatar": "killjoy"
+      "avatar": "killjoy",
+      "card": 3
     },
     {
       "name": "JohnDoe",
       "activity": "Competitive",
       "status": "Online",
-      "avatar": "jett"
+      "avatar": "jett",
+      "card": 15
     },
     {
       "name": "LadyDash",
       "activity": "Deathmatch",
       "status": "Online",
-      "avatar": "raze"
+      "avatar": "raze",
+      "card": 23
     },
     {
       "name": "Nutts",
       "activity": "Offline",
       "status": "Offline",
-      "avatar": "raze"
+      "avatar": "raze",
+      "card": 30
     },
     {
       "name": "Djeeeeker",
       "activity": "Offline",
       "status": "Offline",
-      "avatar": "brimstone"
+      "avatar": "brimstone",
+      "card": 25
     },
     {
       "name": "Menada",
       "activity": "Spike Run",
       "status": "Online",
-      "avatar": "phoenix"
+      "avatar": "phoenix",
+      "card": 33
     },
     {
       "name": "dimati199",
       "activity": "Competitive",
       "status": "Online",
-      "avatar": "sage"
+      "avatar": "sage",
+      "card": 15
     },
     {
       "name": "M9sko",
       "activity": "Competitive",
       "status": "Online",
-      "avatar": "sova"
+      "avatar": "sova",
+      "card": 35
     },
     {
       "name": "ClauserII",
       "activity": "Offline",
       "status": "Offline",
-      "avatar": "viper"
+      "avatar": "viper",
+      "card": 19
     },
     {
       "name": "FOXIlove",
       "activity": "Casual",
       "status": "Online",
-      "avatar": "cypher"
+      "avatar": "cypher",
+      "card": 11
     },
     {
       "name": "Krenechka",
       "activity": "Casual",
       "status": "Online",
-      "avatar": "reyna"
+      "avatar": "reyna",
+      "card": 8
     },
     {
       "name": "dimon6208",
       "activity": "Spike Run",
       "status": "Online",
-      "avatar": "breach"
+      "avatar": "breach",
+      "card": 7
     },
     {
       "name": "RevBANK",
       "activity": "Competitive",
       "status": "Online",
-      "avatar": "omen"
+      "avatar": "omen",
+      "card": 10
     },
     {
       "name": "Latinka",
       "activity": "Competitive",
       "status": "Online",
-      "avatar": "skye"
+      "avatar": "skye",
+      "card": 22
     },
     {
       "name": "JIbiCbiu",
       "activity": "Offline",
       "status": "Offline",
-      "avatar": "brimstone"
+      "avatar": "brimstone",
+      "card": 17
     },
     {
       "name": "Camypai",
       "activity": "Spike Run",
       "status": "Offline",
-      "avatar": "phoenix"
+      "avatar": "phoenix",
+      "card": 24
     },
     {
       "name": "Fresska",
       "activity": "Competitive",
       "status": "Offline",
-      "avatar": "sage"
+      "avatar": "sage",
+      "card": 40
     },
     {
       "name": "Bodxi",
       "activity": "Competitive",
       "status": "Offline",
-      "avatar": "sova"
+      "avatar": "sova",
+      "card": 33
     },
     {
       "name": "lovekida",
       "activity": "Offline",
       "status": "Offline",
-      "avatar": "viper"
+      "avatar": "viper",
+      "card": 29
     }
   ],
   "roles": [
@@ -602,6 +621,280 @@
           "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt966535853a54c58c/5f7fac19df178b0ea98495ad/Val_Skye_X_Ability_Web.mp4"
         }
       ]
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Versus%20Raze%20Killjoy.jpg"
+    },
+    {
+      "id": 2,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Viper.jpg"
+    },
+    {
+      "id": 3,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Blastx.jpg"
+    },
+    {
+      "id": 4,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/What%20Ancient%20Mystery.jpg"
+    },
+    {
+      "id": 5,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Vertraulich.jpg"
+    },
+    {
+      "id": 6,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Viper.jpg"
+    },
+    {
+      "id": 7,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Sova.jpg"
+    },
+    {
+      "id": 8,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Skye.jpg"
+    },
+    {
+      "id": 9,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Sage.jpg"
+    },
+    {
+      "id": 10,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Reyna.jpg"
+    },
+    {
+      "id": 11,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Raze.jpg"
+    },
+    {
+      "id": 12,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Phoenix.jpg"
+    },
+    {
+      "id": 13,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Omen.jpg"
+    },
+    {
+      "id": 14,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Mascot.jpg"
+    },
+    {
+      "id": 15,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Killjoy.jpg"
+    },
+    {
+      "id": 16,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Jett.jpg"
+    },
+    {
+      "id": 17,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Cypher.jpg"
+    },
+    {
+      "id": 18,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Brimstone.jpg"
+    },
+    {
+      "id": 19,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT%20Breach.jpg"
+    },
+    {
+      "id": 20,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/VALORANT.jpg"
+    },
+    {
+      "id": 21,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Through%20The%20Looking%20Glass.jpg"
+    },
+    {
+      "id": 22,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/The%20Way%20Forward.jpg"
+    },
+    {
+      "id": 23,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/The%20Great%20Reclaimer.jpg"
+    },
+    {
+      "id": 24,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Spline.jpg"
+    },
+    {
+      "id": 25,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Sovereign.jpg"
+    },
+    {
+      "id": 26,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Skye%20ID.jpg"
+    },
+    {
+      "id": 27,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Secret%20Lineage.jpg"
+    },
+    {
+      "id": 28,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Rising%20up.jpg"
+    },
+    {
+      "id": 29,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Reyna%20ID.jpg"
+    },
+    {
+      "id": 30,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Revenge%20for%20Life.jpg"
+    },
+    {
+      "id": 31,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Spline.jpg"
+    },
+    {
+      "id": 32,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Radianite%20Hazard.jpg"
+    },
+    {
+      "id": 33,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Prime.jpg"
+    },
+    {
+      "id": 34,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Polyfox.jpg"
+    },
+    {
+      "id": 35,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/One%20Dark%20Night.jpg"
+    },
+    {
+      "id": 36,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Nachtelang.jpg"
+    },
+    {
+      "id": 37,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/No%20One%20Left%20Behind.jpg"
+    },
+    {
+      "id": 38,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/New%20Recruit.jpg"
+    },
+    {
+      "id": 39,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Mirrored%20Edge.jpg"
+    },
+    {
+      "id": 40,
+      "url": "https://cdn.valorantinfo.gg/img/cards/tall/Chicken%20Noir.jpg"
+    }
+  ],
+  "ranking": [
+    {
+      "id": 1,
+      "name": "Iron I",
+      "img": "iron-1.png"
+    },
+    {
+      "id": 2,
+      "name": "Iron II",
+      "img": "iron-2.png"
+    },
+    {
+      "id": 3,
+      "name": "Iron III",
+      "img": "iron-3.png"
+    },
+    {
+      "id": 4,
+      "name": "Bronze I",
+      "img": "bronze-1.png"
+    },
+    {
+      "id": 5,
+      "name": "Bronze II",
+      "img": "bronze-2.png"
+    },
+    {
+      "id": 6,
+      "name": "Bronze III",
+      "img": "bronze-3.png"
+    },
+    {
+      "id": 7,
+      "name": "Silver I",
+      "img": "silver-1.png"
+    },
+    {
+      "id": 8,
+      "name": "Silver II",
+      "img": "silver-2.png"
+    },
+    {
+      "id": 9,
+      "name": "Silver III",
+      "img": "silver-3.png"
+    },
+    {
+      "id": 10,
+      "name": "Gold I",
+      "img": "gold-1.png"
+    },
+    {
+      "id": 11,
+      "name": "Gold II",
+      "img": "gold-2.png"
+    },
+    {
+      "id": 12,
+      "name": "Gold III",
+      "img": "gold-3.png"
+    },
+    {
+      "id": 13,
+      "name": "Platinum I",
+      "img": "platinum-1.png"
+    },
+    {
+      "id": 14,
+      "name": "Platinum II",
+      "img": "platinum-2.png"
+    },
+    {
+      "id": 15,
+      "name": "Platinum III",
+      "img": "platinum-3.png"
+    },
+    {
+      "id": 16,
+      "name": "Diamond I",
+      "img": "diamond-1.png"
+    },
+    {
+      "id": 17,
+      "name": "Diamond II",
+      "img": "diamond-2.png"
+    },
+    {
+      "id": 18,
+      "name": "Diamond III",
+      "img": "diamond-3.png"
+    },
+    {
+      "id": 19,
+      "name": "Immortal I",
+      "img": "immortal-1.png"
+    },
+    {
+      "id": 20,
+      "name": "Immortal II",
+      "img": "immortal-2.png"
+    },
+    {
+      "id": 21,
+      "name": "Immortal III",
+      "img": "immortal-3.png"
+    },
+    {
+      "id": 22,
+      "name": "Valorant",
+      "img": "valorant.png"
     }
   ]
 }
