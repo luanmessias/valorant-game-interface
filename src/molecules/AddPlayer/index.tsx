@@ -10,6 +10,7 @@ import {
   PlayerStatus,
   PlayerName,
   PlayerRanking,
+  PlayerContent,
   FormPlayer,
   PlusButton
 } from './Styles'
@@ -26,6 +27,7 @@ interface IProfile {
   status: string
   avatar: string
   card: number
+  ranking: number
 }
 
 interface ICard {
@@ -39,7 +41,12 @@ interface IRanking {
   img: string
 }
 
-const AddPlayer: React.FC<IAddFriend> = ({ playerName, dataSize, onClick }) => {
+const AddPlayer: React.FC<IAddFriend> = ({
+  playerName,
+  dataSize,
+  onClick,
+  children
+}) => {
   const profile = SwrFetchHook<IProfile[]>('friends').data
   const cards = SwrFetchHook<ICard[]>('cards').data
   const rankings = SwrFetchHook<IRanking[]>('ranking').data
@@ -61,14 +68,10 @@ const AddPlayer: React.FC<IAddFriend> = ({ playerName, dataSize, onClick }) => {
     return card
   }
 
-  const getRandomRanking = () => {
-    const randomNumber = Math.floor(Math.random() * 22) + 1
-    const ranking = (rankings || []).filter(
-      ranking => ranking.id === randomNumber
-    )[0].img
+  const getRanking = id => {
+    const ranking = (rankings || []).filter(ranking => ranking.id === id)[0].img
     return ranking
   }
-
   return (
     <>
       {playerName &&
@@ -77,6 +80,7 @@ const AddPlayer: React.FC<IAddFriend> = ({ playerName, dataSize, onClick }) => {
           .map(player => (
             <PlayerStage key={player.name} data-size={dataSize}>
               <MainPlayer CardImage={getCard(player.card)}>
+                <PlayerContent>{children}</PlayerContent>
                 <PlayerStatus>READY</PlayerStatus>
                 <PlayerName>
                   <ArrowPlayerReadySVG />
@@ -84,7 +88,7 @@ const AddPlayer: React.FC<IAddFriend> = ({ playerName, dataSize, onClick }) => {
                 </PlayerName>
                 <PlayerRanking>
                   <Image
-                    src={`/img/rank-icons/${getRandomRanking()}`}
+                    src={`/img/rank-icons/${getRanking(player.ranking)}`}
                     width={60}
                     height={60}
                   />

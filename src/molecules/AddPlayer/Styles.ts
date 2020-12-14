@@ -15,16 +15,16 @@ export const PlayerStage = styled.div`
   box-sizing: border-box;
   position: relative;
   &[data-size='1'] {
-    width: 290px;
-    height: 660px;
+    width: 240px;
+    height: 560px;
   }
   &[data-size='2'] {
-    width: 260px;
-    height: 590px;
+    width: 220px;
+    height: 510px;
   }
   &[data-size='3'] {
-    width: 250px;
-    height: 566px;
+    width: 200px;
+    height: 470px;
   }
 `
 
@@ -59,7 +59,7 @@ export const EmptyPlayer = styled.div`
 
 export const PlayerStatus = styled.div`
   position: absolute;
-  bottom: 30%;
+  bottom: 36%;
   box-sizing: border-box;
   padding: 5px;
   width: 100%;
@@ -72,7 +72,7 @@ export const PlayerStatus = styled.div`
 
 export const PlayerName = styled.div`
   position: absolute;
-  bottom: 25%;
+  bottom: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,6 +106,9 @@ export const PlayerRanking = styled.div`
     border: 1px solid rgba(200, 200, 200, 0.4);
   }
 `
+
+export const PlayerContent = styled.div``
+
 export const FormPlayer = styled.div``
 
 export const PlusButton = styled.div``
