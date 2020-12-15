@@ -10,9 +10,7 @@ import {
   PlayerStatus,
   PlayerName,
   PlayerRanking,
-  PlayerContent,
-  FormPlayer,
-  PlusButton
+  PlayerContent
 } from './Styles'
 
 interface IAddFriend {
