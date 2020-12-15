@@ -2,10 +2,10 @@ import axios from 'axios'
 
 const api = axios.create({
   // Local
-  baseURL: 'http://localhost:3333'
+  // baseURL: 'http://localhost:3333'
 
   // Online
-  // baseURL: 'https://api.jsonbin.io/b/5fd91f387e2e9559b15d3e9c'
+  baseURL: 'https://api.mocki.io/v1/b995b517'
 })
 
 export default api
