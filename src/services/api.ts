@@ -5,7 +5,7 @@ const api = axios.create({
   baseURL: 'http://localhost:3333'
 
   // Online
-  // baseURL: 'https://5fc551e336bc790016344a80.mockapi.io/valorant/'
+  // baseURL: 'https://api.jsonbin.io/b/5fd91f387e2e9559b15d3e9c'
 })
 
 export default api

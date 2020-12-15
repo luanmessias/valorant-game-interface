@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "server": "npx json-server db.json -p 3333 -w"
+    "server": "npx json-server server.json -p 3333 -w"
   },
   "dependencies": {
     "axios": "^0.21.0",
