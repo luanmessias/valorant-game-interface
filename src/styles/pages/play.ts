@@ -151,3 +151,75 @@ export const RemovePlayer = styled.div`
     }
   }
 `
+export const PlayButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  position: relative;
+  margin-top: 30px;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #767a7e;
+    position: absolute;
+  }
+
+  .PlayMainBt {
+    width: 240px;
+    height: 40px;
+    svg {
+      fill: #d7d9e8;
+      margin-left: 10px;
+    }
+  }
+
+  .PlayStartBt {
+    font-size: 23px;
+    color: #fff;
+    width: 290px;
+    height: 70px;
+    margin: 0px 40px;
+    background-color: #38776d;
+
+    > div {
+      background-color: #80c4b9;
+    }
+
+    &:hover {
+      background-color: #80c4b9;
+      > div {
+        background-color: #38776d;
+      }
+      svg {
+        fill: #80c4b9;
+      }
+    }
+
+    span {
+      position: absolute;
+      z-index: 1;
+    }
+
+    svg {
+      fill: #38776d;
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      opacity: 0.2;
+    }
+  }
+
+  &[data-active='false'] {
+    .PlayStartBt {
+      cursor: not-allowed;
+      margin: 20px 10px;
+      background-color: rgba(221, 85, 92, 0.9);
+      & > div:last-of-type {
+        background-color: rgba(180, 45, 72, 1);
+        border-color: rgba(225, 105, 102, 0.9);
+      }
+    }
+  }
+`

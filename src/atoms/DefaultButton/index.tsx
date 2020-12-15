@@ -6,11 +6,7 @@ import { Container, Content } from './Styles'
 
 type linkProps = LinkHTMLAttributes<HTMLLinkElement>
 
-const ConfigDialogButton: React.FC<linkProps> = ({
-  href,
-  children,
-  className
-}) => {
+const DefaultButton: React.FC<linkProps> = ({ href, children, className }) => {
   return (
     <Link href={href} passHref>
       <Container className={className}>
@@ -24,4 +20,4 @@ const ConfigDialogButton: React.FC<linkProps> = ({
   )
 }
 
-export default ConfigDialogButton
+export default DefaultButton

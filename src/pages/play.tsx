@@ -7,10 +7,12 @@ import AddPlayer from '@/molecules/AddPlayer'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
 import Loading from '@/atoms/Loading'
 import { useModalContext } from '@/context/Modal'
-import AimSVF from '@/svg/aim.svg'
+import AimSVG from '@/svg/aim.svg'
+import CrosshairSVG from '@/svg/crosshair.svg'
 import CloseSVG from '@/svg/close.svg'
+import ValorantLogoSVG from '@/svg/valorant-logo.svg'
 import PlusButtonSVG from '@/svg/plus-button.svg'
-
+import DefaultButton from '@/atoms/DefaultButton'
 import {
   Container,
   ReturnBtContainer,
@@ -21,7 +23,8 @@ import {
   PlayersList,
   CloseModal,
   AddFriendButton,
-  RemovePlayer
+  RemovePlayer,
+  PlayButtonsContainer
 } from '@/globalStyles/pages/play'
 
 interface IProfile {
@@ -40,6 +43,8 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
   const [playerThree, setPlayerThree] = useState(undefined)
   const [playerFour, setPlayerFour] = useState(undefined)
   const [playerFive, setPlayerFive] = useState(undefined)
+  const [startButton, setStartButton] = useState(false)
+  const [allPlayers, setAllpayers] = useState([])
 
   const { openModal, closeModal }: any = useModalContext()
 
@@ -60,12 +65,34 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
       p.name !== playerFive &&
       p.name.toLowerCase().includes(searchString.toLowerCase())
   )
+
+  async function handleRemovePLayer(setPlayer, player) {
+    await setPlayer(undefined)
+
+    const index = allPlayers.indexOf(player)
+
+    if (index > -1) {
+      allPlayers.splice(index, 1)
+      setStartButton(false)
+    }
+  }
+
+  async function handleSetPlayer(setPlayer, player) {
+    closeModal()
+    await setPlayer(player)
+    allPlayers.push(player)
+
+    if (allPlayers.length === 4) {
+      setStartButton(true)
+    }
+  }
+
   const togglePlayerForm = setPlayer => {
     openModal(
       <ModalPlayers>
         <PlayersContainer>
           <CloseModal onClick={closeModal}>
-            <AimSVF />
+            <AimSVG />
           </CloseModal>
           <PlayersFilter hidden>
             <span>Filter: {searchString}</span>
@@ -91,10 +118,12 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
                         <span>{player.name}</span>
                       </div>
                       <AddFriendButton
-                        onClick={() => {
-                          setPlayer(player.name)
-                          closeModal()
-                        }}
+                        // onClick={() => {
+                        //   setPlayer(player.name)
+                        //   closeModal()
+                        // }}
+
+                        onClick={() => handleSetPlayer(setPlayer, player.name)}
                       >
                         <PlusButtonSVG />
                       </AddFriendButton>
@@ -107,6 +136,7 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
       </ModalPlayers>
     )
   }
+
   return (
     <Container>
       <ReturnBtContainer>
@@ -122,7 +152,9 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
           playerName={playerFour}
           dataSize={3}
         >
-          <RemovePlayer onClick={() => setPlayerFour(undefined)}>
+          <RemovePlayer
+            onClick={() => handleRemovePLayer(setPlayerFour, playerFour)}
+          >
             <CloseSVG />
           </RemovePlayer>
         </AddPlayer>
@@ -131,7 +163,9 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
           playerName={playerTwo}
           dataSize={2}
         >
-          <RemovePlayer onClick={() => setPlayerTwo(undefined)}>
+          <RemovePlayer
+            onClick={() => handleRemovePLayer(setPlayerTwo, playerTwo)}
+          >
             <CloseSVG />
           </RemovePlayer>
         </AddPlayer>
@@ -141,7 +175,9 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
           playerName={playerThree}
           dataSize={2}
         >
-          <RemovePlayer onClick={() => setPlayerThree(undefined)}>
+          <RemovePlayer
+            onClick={() => handleRemovePLayer(setPlayerThree, playerThree)}
+          >
             <CloseSVG />
           </RemovePlayer>
         </AddPlayer>
@@ -150,11 +186,27 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
           playerName={playerFive}
           dataSize={3}
         >
-          <RemovePlayer onClick={() => setPlayerFive(undefined)}>
+          <RemovePlayer
+            onClick={() => handleRemovePLayer(setPlayerFive, playerFive)}
+          >
             <CloseSVG />
           </RemovePlayer>
         </AddPlayer>
       </Content>
+
+      <PlayButtonsContainer data-active={startButton}>
+        <DefaultButton className="PlayMainBt" href="">
+          TRAIN <CrosshairSVG />
+        </DefaultButton>
+        <DefaultButton className="PlayStartBt" href="">
+          {!startButton && <span>SELECT PLAYERS</span>}
+          {startButton && <span>START</span>}
+          <ValorantLogoSVG />
+        </DefaultButton>
+        <DefaultButton className="PlayMainBt" href="">
+          LEFT GROUP
+        </DefaultButton>
+      </PlayButtonsContainer>
     </Container>
   )
 }

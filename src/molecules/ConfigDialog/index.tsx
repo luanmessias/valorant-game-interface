@@ -10,7 +10,7 @@ import {
 import AimSVF from '@/svg/aim.svg'
 import ArrowConfigSVG from '@/svg/arrow-config.svg'
 import { useModalContext } from '@/context/Modal'
-import ConfigDialogButton from '@/atoms/ConfigDialogButton'
+import DefaultButton from '@/atoms/DefaultButton'
 
 const ConfigDalog: React.FC = () => {
   const { closeModal }: any = useModalContext()
@@ -21,21 +21,21 @@ const ConfigDalog: React.FC = () => {
         <CloseModal onClick={closeModal}>
           <AimSVF />
         </CloseModal>
-        <ConfigDialogButton className="DialogButton" href="/">
+        <DefaultButton className="DialogButton" href="/">
           Configuracoes
-        </ConfigDialogButton>
-        <ConfigDialogButton className="DialogButton" href="/">
+        </DefaultButton>
+        <DefaultButton className="DialogButton" href="/">
           Suporte
-        </ConfigDialogButton>
-        <ConfigDialogButton className="DialogButton" href="/">
+        </DefaultButton>
+        <DefaultButton className="DialogButton" href="/">
           Sobre
-        </ConfigDialogButton>
+        </DefaultButton>
         <ArrowSVG>
           <ArrowConfigSVG />
         </ArrowSVG>
-        <ConfigDialogButton className="DialogButtonRed" href="/">
+        <DefaultButton className="DialogButtonRed" href="/">
           Sair para a area de trabalho
-        </ConfigDialogButton>
+        </DefaultButton>
       </Content>
       <LineDown />
     </Container>
