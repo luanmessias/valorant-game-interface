@@ -8,4 +8,15 @@ module.exports = withReactSvg({
   webpack(config, options) {
     return config
   }
-})
+});
+
+module.exports = {
+  exportPathMap: async function() {
+    return {
+      "/": { page: "/" },
+      "/carrier": { page: "/carrier" },
+      "/collection": { page: "/collection" },
+      "/store": { page: "/store" },
+    };
+  }
+};
