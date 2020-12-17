@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
 import ArrowPlayerReadySVG from '@/svg/player-ready-arrow-icon.svg'
 
@@ -85,7 +84,7 @@ const AddPlayer: React.FC<IAddFriend> = ({
                   {player.name}
                 </PlayerName>
                 <PlayerRanking>
-                  <Image
+                  <img
                     src={`/img/rank-icons/${getRanking(player.ranking)}`}
                     width={60}
                     height={60}

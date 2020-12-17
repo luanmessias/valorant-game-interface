@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
 import ReturnButton from '@/atoms/ReturnButton'
 import PlayMenu from '@/molecules/PlayMenu'
 import CloseGroupButton from '@/atoms/CloseGroupButton'
@@ -109,7 +108,7 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
                 onlinePlayers.map(player => {
                   return (
                     <li key={player.name}>
-                      <Image
+                      <img
                         src={`/img/profile-avatars/${player.avatar}.png`}
                         width={45}
                         height={45}

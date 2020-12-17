@@ -94,7 +94,7 @@ export const PlayerRanking = styled.div`
   transform: translateX(-50%);
   z-index: 1;
 
-  &:before {
+  &:after {
     content: '';
     position: absolute;
     top: -5px;

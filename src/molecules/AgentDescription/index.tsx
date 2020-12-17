@@ -1,6 +1,5 @@
 import React from 'react'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
-import Image from 'next/image'
 import { NameCont, AgentInfo, AgentRole, RoleDescription } from './Styles'
 
 interface IRouteAgent {
@@ -51,7 +50,7 @@ const AgentDescription: React.FC<IRouteAgent> = ({
 
               <span>{'// ROLE'}</span>
               <AgentRole>
-                <Image
+                <img
                   src={`/img/roles/${agent.role}.png`}
                   width={41}
                   height={41}
