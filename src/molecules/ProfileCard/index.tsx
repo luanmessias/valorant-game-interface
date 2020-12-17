@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
 import { Container, ProfileInfo, ProfileStatus, ProfileName } from './Styles'
 import SendMsgSVG from '@/svg/send-message.svg'
@@ -42,7 +43,7 @@ const profileCard: React.FC<IProfName> = ({ profName }) => {
   return (
     <Container>
       <ProfileStatus ProfStatus={setStatusColor()}>
-        <img
+        <Image
           src={`/img/profile-avatars/${profile.avatar}.png`}
           width="45"
           height="45"

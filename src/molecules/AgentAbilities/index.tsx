@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
 import ValorantLogoSVG from '@/svg/valorant-logo.svg'
 import {
@@ -49,28 +50,28 @@ const AgentAbilities: React.FC<IRouteAgent> = ({ RouteAgent }: IRouteAgent) => {
               ActiveAbility={activeAbility}
             >
               <Ability onClick={() => setActiveAbility(1)}>
-                <img
+                <Image
                   src={`/img/abilities/${agent.name}/1.png`}
                   width={41}
                   height={41}
                 />
               </Ability>
               <Ability onClick={() => setActiveAbility(2)}>
-                <img
+                <Image
                   src={`/img/abilities/${agent.name}/2.png`}
                   width={41}
                   height={41}
                 />
               </Ability>
               <Ability onClick={() => setActiveAbility(3)}>
-                <img
+                <Image
                   src={`/img/abilities/${agent.name}/3.png`}
                   width={41}
                   height={41}
                 />
               </Ability>
               <Ability onClick={() => setActiveAbility(4)}>
-                <img
+                <Image
                   src={`/img/abilities/${agent.name}/4.png`}
                   width={41}
                   height={41}
