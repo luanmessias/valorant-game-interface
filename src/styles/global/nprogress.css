@@ -1,7 +1,6 @@
 /* Make clicks pass-through */
 #nprogress {
   pointer-events: none;
-  background-color: #000;
 }
 
 #nprogress .bar {
@@ -23,7 +22,7 @@
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #000, 0 0 5px #000;
+  box-shadow: 0 0 10px #dd555c, 0 0 5px #dd555c;
   opacity: 1;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);

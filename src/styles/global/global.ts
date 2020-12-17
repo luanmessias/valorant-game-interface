@@ -18,6 +18,23 @@ body,
   height: 100%;
   overflow: hidden;
 }
+
+
+.placeholder:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  animation: load var(--transition-speed-slow) var(--transition-curve) infinite;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
 `
 
 export const Main = styled.main`

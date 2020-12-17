@@ -22,7 +22,53 @@ const MainNav: React.FC = () => {
   const { openModal }: any = useModalContext()
 
   if (!data) {
-    return <span>Carregando...</span>
+    return (
+      <>
+        <Container>
+          <ul>
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+
+            <li
+              className="placeholder"
+              style={{ width: '100px', height: '30px' }}
+            ></li>
+          </ul>
+        </Container>
+      </>
+    )
   }
 
   return (
