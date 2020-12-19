@@ -14,8 +14,7 @@ import '../styles/global/nprogress.css'
 import GlobalNormalize from '../styles/global/normalize'
 import GlobalStyles, { Main, BGImage, Wrapper } from '../styles/global/global'
 
-Router.events.on('routeChangeStart', url => {
-  console.log(`Loading: ${url}`)
+Router.events.on('routeChangeStart', () => {
   NProgress.start()
 })
 

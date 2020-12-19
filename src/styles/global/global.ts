@@ -1,5 +1,17 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, keyframes } from 'styled-components'
 import { motion } from 'framer-motion'
+
+const placeholderLoading = keyframes`
+  0%{
+      opacity: .2
+  }
+  50%{
+      opacity: .5
+  }
+  100%{
+      opacity: .2
+  }
+`
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -26,13 +38,8 @@ body,
   height: 100%;
   width: 100%;
   top: 0;
-  animation: load var(--transition-speed-slow) var(--transition-curve) infinite;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  animation: ${placeholderLoading} 2s linear infinite;
+  background-color: #CCC;
 }
 
 `

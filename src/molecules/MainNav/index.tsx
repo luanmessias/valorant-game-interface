@@ -24,45 +24,36 @@ const MainNav: React.FC = () => {
   if (!data) {
     return (
       <>
-        <Container>
+        <Container className="placeholderCont">
           <ul>
             <li
-              className="placeholder"
+              className="placeholder website"
               style={{ width: '100px', height: '30px' }}
             ></li>
 
             <li
-              className="placeholder"
+              className="placeholder clock"
               style={{ width: '100px', height: '30px' }}
             ></li>
-
             <li
               className="placeholder"
               style={{ width: '100px', height: '30px' }}
             ></li>
-
             <li
               className="placeholder"
               style={{ width: '100px', height: '30px' }}
             ></li>
-
             <li
               className="placeholder"
               style={{ width: '100px', height: '30px' }}
             ></li>
-
             <li
-              className="placeholder"
+              className="placeholder points"
               style={{ width: '100px', height: '30px' }}
             ></li>
 
             <li
-              className="placeholder"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
-
-            <li
-              className="placeholder"
+              className="placeholder settings"
               style={{ width: '100px', height: '30px' }}
             ></li>
           </ul>

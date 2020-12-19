@@ -129,7 +129,7 @@ export const Container = styled.nav`
         svg {
           transition: all 0.5s;
           width: 20px;
-          height: 20px;
+          height: display: none;20px;
         }
 
         &:hover {
@@ -142,6 +142,15 @@ export const Container = styled.nav`
             height: 45px;
           }
         }
+      }
+    }
+  }
+
+  &.placeholderCont {
+    > ul {
+      > li {
+        border: 0;
+        padding: 0;
       }
     }
   }
