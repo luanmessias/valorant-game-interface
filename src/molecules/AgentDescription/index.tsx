@@ -73,7 +73,6 @@ const AgentDescription: React.FC<IRouteAgent> = ({
                           </span>
                         )
                       })}
-                      agent
                     </div>
                   </RoleDescription>
                 ))}

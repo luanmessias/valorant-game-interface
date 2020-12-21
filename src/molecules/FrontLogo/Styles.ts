@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { minDevice, maxDevice } from '@/globalStyles/global/device'
 
 export const Container = styled(motion.div)`
   display: flex;
@@ -8,6 +9,13 @@ export const Container = styled(motion.div)`
   align-items: center;
   position: absolute;
   z-index: 1;
+
+  @media ${maxDevice.mobileL} {
+    padding: 10px;
+    position: inherit;
+    width: 100%;
+    display: none;
+  }
 `
 
 export const CurrentAct = styled.span`

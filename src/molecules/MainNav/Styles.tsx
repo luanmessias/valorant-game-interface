@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { minDevice, maxDevice } from '@/globalStyles/global/device'
 
 export const Container = styled.nav`
   display: flex;
@@ -129,7 +130,7 @@ export const Container = styled.nav`
         svg {
           transition: all 0.5s;
           width: 20px;
-          height: display: none;20px;
+          height: 20px;
         }
 
         &:hover {
@@ -154,6 +155,108 @@ export const Container = styled.nav`
       }
     }
   }
+
+  @media ${maxDevice.mobileL} {
+    position: absolute;
+    height: calc(100% - 50px);
+    margin-top: 50px;
+    > ul {
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+      width: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 0;
+
+      > li {
+        &.website,
+        &.clock,
+        &.init,
+        &.agents,
+        &.play,
+        &.carrier,
+        &.collection,
+        &.points,
+        &.settings {
+          box-sizing: border-box;
+          padding: 20px;
+          width: 100%;
+          margin: 0px;
+          text-align: left;
+          border: 0px;
+          position: inherit;
+          height: auto;
+          transform: inherit;
+          justify-content: flex-start;
+          > a {
+            font-size: 20px;
+          }
+        }
+
+        &.init {
+          order: 1;
+        }
+
+        &.agents {
+          order: 2;
+        }
+
+        &.agents {
+          order: 3;
+        }
+        &.play {
+          order: 4;
+        }
+        &.carrier {
+          order: 5;
+        }
+        &.collection {
+          order: 6;
+        }
+        &.clock {
+          order: 7;
+        }
+
+        &.points {
+          order: 8;
+        }
+
+        &.settings {
+          order: 9;
+
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        &.website {
+          display: none;
+        }
+
+        &.play {
+          > a {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d7d9e8;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            transition: all 0.3s;
+
+            &:hover,
+            &:active {
+              color: #eaeeb2;
+            }
+          }
+          > div {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 `
 
 export const SvgPlay = styled.div`
@@ -162,3 +265,6 @@ export const SvgPlay = styled.div`
   width: 354px;
   height: 55px;
 `
+export const MobNav = styled.div``
+export const MobMenu = styled.div``
+export const MobFriends = styled.div``

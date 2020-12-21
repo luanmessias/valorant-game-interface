@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components'
 import { motion } from 'framer-motion'
+import { minDevice, maxDevice } from './device'
 
 const placeholderLoading = keyframes`
   0%{
@@ -28,7 +29,12 @@ body,
 #__next{
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media ${minDevice.tablet} {
+    overflow: hidden;
+  }
 }
 
 

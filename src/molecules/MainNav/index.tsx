@@ -6,8 +6,9 @@ import SwrFetchHook from '@/hooks/SwrFetchHook'
 import ClockIconSvg from '@/svg/clock-icon.svg'
 import MainNavCenterSvg from '@/svg/main-nav-center.svg'
 import ValorantPointsSvg from '@/svg/valorant-points.svg'
+import LogoSVG from '@/svg/valorant-logo.svg'
 import RadiantPointsSvg from '@/svg/radiant-points.svg'
-import { Container, SvgPlay } from './Styles'
+import { Container, SvgPlay, MobNav, MobMenu, MobFriends } from './Styles'
 import { useModalContext } from '@/context/Modal'
 import ConfigDialog from '@/molecules/ConfigDialog'
 
@@ -24,6 +25,11 @@ const MainNav: React.FC = () => {
   if (!data) {
     return (
       <>
+        <MobNav>
+          <MobMenu />
+          <LogoSVG />
+          <MobFriends />
+        </MobNav>
         <Container className="placeholderCont">
           <ul>
             <li

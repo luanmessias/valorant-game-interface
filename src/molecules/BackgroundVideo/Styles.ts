@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { minDevice, maxDevice } from '@/globalStyles/global/device'
 
 export const BgPattern = styled.div`
   background-image: url('/svg/bg-reticule.svg');
@@ -6,6 +7,11 @@ export const BgPattern = styled.div`
   width: 100vw;
   height: 100vh;
   opacity: 0.5;
+
+  @media ${maxDevice.mobileL} {
+    background-image: inherit;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 `
 
 export const Container = styled.div`
@@ -29,6 +35,10 @@ export const Container = styled.div`
   &[data-active='false'] {
     opacity: 0.3;
   }
+
+  @media ${maxDevice.mobileL} {
+    background: inherit;
+  }
 `
 
 export const BgVideo = styled.video`
@@ -39,6 +49,10 @@ export const BgVideo = styled.video`
   transition: all 0.5s;
 
   &[data-active='false'] {
+    display: none;
+  }
+
+  @media ${maxDevice.mobileL} {
     display: none;
   }
 `
@@ -59,6 +73,10 @@ export const PlayPanel = styled.div`
   padding: 5px 10px;
   border: 2px solid #fff;
   border-radius: 50px;
+
+  @media ${maxDevice.mobileL} {
+    display: none;
+  }
 `
 export const VideoSwitch = styled.div`
   display: flex;

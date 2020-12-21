@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.a`
-  font-size: 14;
+  font-size: 14px;
   font-weight: bold;
   color: #d7d9e8;
   text-decoration: none;
