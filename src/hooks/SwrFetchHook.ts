@@ -1,6 +1,7 @@
 import api from 'src/services/api'
 import useSWR from 'swr'
 
+const fetcher = url => fetch(url).then(res => res.json())
 function SwrFetchHook<Data = any, Error = any>(url: string) {
   const { data, error } = useSWR<Data, Error>(url, async url => {
     /* Fetch method: */

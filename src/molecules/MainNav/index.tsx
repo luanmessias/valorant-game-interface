@@ -12,6 +12,9 @@ import { Container, SvgPlay, MobNav, MobMenu, MobFriends } from './Styles'
 import { useModalContext } from '@/context/Modal'
 import ConfigDialog from '@/molecules/ConfigDialog'
 
+import useSWR from 'swr'
+const fetcher = url => fetch(url).then(res => res.json())
+
 interface INavItem {
   id: string
   url: string
@@ -19,8 +22,10 @@ interface INavItem {
 }
 
 const MainNav: React.FC = () => {
-  const { data } = SwrFetchHook<INavItem[]>('/api/categories')
+  const { data, error } = useSWR('/api/categories', fetcher)
   const { openModal }: any = useModalContext()
+
+  if (error) return <div>Failed to load</div>
 
   if (!data) {
     return (
