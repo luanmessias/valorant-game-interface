@@ -2559,7 +2559,7 @@ next-react-svg@1.1.2:
   dependencies:
     svg-react-loader "0.4.6"
 
-next@*, next@^10.0.2:
+next@*, next@latest:
   version "10.0.8"
   resolved "https://registry.yarnpkg.com/next/-/next-10.0.8.tgz#a2232c11ffad974d67f3d572b8db2acaa5ddedd7"
   integrity sha512-iDY65ce4Prn/9EnQpJGFMb5QJvtGWzZPk6KQqT7vDNu4D+jkivkk9NaAs/k1hR73pXdJHmhHer1s0YxLSghAKQ==
