@@ -2,6 +2,7 @@ import React from 'react'
 import NavLink from '@/atoms/NavLink'
 import ValorantGameLink from '@/atoms/ValorantGameLink'
 import GearConfig from '@/svg/gear-config.svg'
+import SwrFetchHook from '@/hooks/SwrFetchHook'
 import ClockIconSvg from '@/svg/clock-icon.svg'
 import MainNavCenterSvg from '@/svg/main-nav-center.svg'
 import ValorantPointsSvg from '@/svg/valorant-points.svg'
@@ -10,9 +11,6 @@ import RadiantPointsSvg from '@/svg/radiant-points.svg'
 import { Container, SvgPlay, MobNav, MobMenu, MobFriends } from './Styles'
 import { useModalContext } from '@/context/Modal'
 import ConfigDialog from '@/molecules/ConfigDialog'
-import useSWR from 'swr'
-
-const fetcher = url => fetch(url).then(res => res.json())
 
 interface INavItem {
   id: string
@@ -20,11 +18,9 @@ interface INavItem {
   title: string
 }
 
-const MainNav = () => {
+const MainNav: React.FC = () => {
+  const { data } = SwrFetchHook<INavItem[]>('categories')
   const { openModal }: any = useModalContext()
-  const { data, error } = useSWR('/api/categories', fetcher)
-
-  if (error) return <div>Failed to load</div>
 
   if (!data) {
     return (
