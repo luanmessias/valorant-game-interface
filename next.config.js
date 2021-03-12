@@ -7,9 +7,3 @@ module.exports = withReactSvg({
     return config
   }
 })
-
-module.exports = {
-  async rewrites() {
-    return [{ source: '/api/:path*', destination: '/pages/api/:path*' }]
-  }
-}
