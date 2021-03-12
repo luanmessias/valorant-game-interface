@@ -1,7 +1,7 @@
-import { VercelRequest, VercelResponse } from '@vercel/node'
 import data from './data.json'
 
-export default (request: VercelRequest, response: VercelResponse) => {
-  const { endpoint } = request.query
-  response.json(data[`${endpoint}`])
+export default function dataHandler(req, res) {
+  const { endpoint } = req.query
+
+  res.status(200).json(data[endpoint])
 }
