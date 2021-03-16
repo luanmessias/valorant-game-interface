@@ -28,7 +28,7 @@ interface IAgents {
 }
 
 const AgentsMenu: React.FC<IRouteAgent> = ({ RouteAgent }: IRouteAgent) => {
-  const agents = SwrFetchHook<IAgents[]>('agents').data
+  const agents = SwrFetchHook<IAgents[]>('/api/agents').data
 
   if (!agents) {
     return <p>carregando...</p>

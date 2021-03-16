@@ -31,7 +31,7 @@ interface IAgents {
 }
 
 const AgentAbilities: React.FC<IRouteAgent> = ({ RouteAgent }: IRouteAgent) => {
-  const agents = SwrFetchHook<IAgents[]>('agents').data
+  const agents = SwrFetchHook<IAgents[]>('/api/agents').data
   const [activeAbility, setActiveAbility] = useState(1)
 
   if (!agents) {

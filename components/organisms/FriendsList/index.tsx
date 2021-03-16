@@ -51,7 +51,7 @@ const FriendsList: React.FC = () => {
     return router.events.on('routeChangeComplete', handleRouteChange)
   }, [])
 
-  const { data } = SwrFetchHook<IProfile[]>('friends')
+  const { data } = SwrFetchHook<IProfile[]>('/api/friends')
 
   if (!data) {
     return <p>carregando...</p>

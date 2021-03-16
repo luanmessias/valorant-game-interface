@@ -2,17 +2,21 @@ import React from 'react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { AppProps } from 'next/dist/next-server/lib/router/router'
-import MainNav from '../molecules/MainNav'
+import MainNav from '@/molecules/MainNav'
 import { ThemeProvider } from 'styled-components'
-import theme from '../styles/theme'
+import theme from '@/globalStyles/theme'
 import FriendsList from '@/organisms/FriendsList'
 import { ModalProvider } from '@/context/Modal'
 import Modal from '@/molecules/Modal'
 import { BGVideoProvider } from '@/context/BackgroundVideo'
 import { AnimatePresence } from 'framer-motion'
-import '../styles/global/nprogress.css'
-import GlobalNormalize from '../styles/global/normalize'
-import GlobalStyles, { Main, BGImage, Wrapper } from '../styles/global/global'
+import GlobalNormalize from '@/globalStyles/global/normalize'
+import GlobalStyles, {
+  Main,
+  BGImage,
+  Wrapper
+} from '@/globalStyles/global/global'
+import '@/globalStyles/global/nprogress.css'
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start()

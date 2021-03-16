@@ -48,7 +48,7 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
 
   const { openModal, closeModal }: any = useModalContext()
 
-  const profile = SwrFetchHook<IProfile[]>('friends').data
+  const profile = SwrFetchHook<IProfile[]>('/api/friends').data
 
   if (!profile) {
     return <Loading />

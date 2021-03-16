@@ -4,14 +4,13 @@ import { useRouter } from 'next/router'
 import AgentsMenu from '@/molecules/AgentsMenu'
 import AgentDescription from '@/molecules/AgentDescription'
 import AgentPhoto from '@/molecules/AgentPhoto'
+import AgentAbilities from '@/molecules/AgentAbilities'
 
 import {
   Container,
   ReturnBtContainer,
   Content
 } from '@/globalStyles/pages/agents'
-import AgentAbilities from '@/molecules/AgentAbilities'
-
 interface IRoles {
   name: string
   description: string

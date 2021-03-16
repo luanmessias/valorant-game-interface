@@ -19,7 +19,7 @@ interface INavItem {
 }
 
 const MainNav: React.FC = () => {
-  const { data } = SwrFetchHook<INavItem[]>('categories')
+  const { data } = SwrFetchHook<INavItem[]>('/api/categories')
   const { openModal }: any = useModalContext()
 
   if (!data) {

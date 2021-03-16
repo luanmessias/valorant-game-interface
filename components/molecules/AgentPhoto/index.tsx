@@ -29,8 +29,8 @@ const AgentDescription: React.FC<IRouteAgent> = ({
   RouteAgent
 }: IRouteAgent) => {
   const [changeArt, setChangeArt] = useState(true)
-  const agents = SwrFetchHook<IAgents[]>('agents').data
-  const roles = SwrFetchHook<IRoles[]>('roles').data
+  const agents = SwrFetchHook<IAgents[]>('/api/agents').data
+  const roles = SwrFetchHook<IRoles[]>('/api/roles').data
 
   if (!agents) {
     return <p>carregando...</p>

@@ -45,9 +45,9 @@ const AddPlayer: React.FC<IAddFriend> = ({
   onClick,
   children
 }) => {
-  const profile = SwrFetchHook<IProfile[]>('friends').data
-  const cards = SwrFetchHook<ICard[]>('cards').data
-  const rankings = SwrFetchHook<IRanking[]>('ranking').data
+  const profile = SwrFetchHook<IProfile[]>('/api/friends').data
+  const cards = SwrFetchHook<ICard[]>('/api/cards').data
+  const rankings = SwrFetchHook<IRanking[]>('/api/ranking').data
 
   if (!profile) {
     return <p>carregando...</p>
