@@ -40,14 +40,7 @@ export default class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="en">
-        <Head>
-          <title>Valorant Game Interface</title>
-          <meta charSet="utf-8" />
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

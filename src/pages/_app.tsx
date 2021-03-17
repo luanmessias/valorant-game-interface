@@ -11,6 +11,7 @@ import Modal from '@/molecules/Modal'
 import { BGVideoProvider } from '@/context/BackgroundVideo'
 import { AnimatePresence } from 'framer-motion'
 import GlobalNormalize from '@/globalStyles/global/normalize'
+import Head from 'next/head'
 import GlobalStyles, {
   Main,
   BGImage,
@@ -53,6 +54,14 @@ export default function MyApp({
 
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        <title>Valorant Game Interface</title>
+        <meta charSet="utf-8" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+          rel="stylesheet"
+        />
+      </Head>
       <ModalProvider>
         <BGVideoProvider>
           <Modal />
