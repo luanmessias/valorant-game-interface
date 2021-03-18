@@ -1,19 +1,6 @@
-import styled, { createGlobalStyle, keyframes } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { motion } from 'framer-motion'
 import { minDevice, maxDevice } from './device'
-
-const placeholderLoading = keyframes`
-  0%{
-      opacity: .2
-  }
-  50%{
-      opacity: .5
-  }
-  100%{
-      opacity: .2
-  }
-`
-
 const GlobalStyle = createGlobalStyle`
 * {
   margin: 0;
@@ -36,18 +23,6 @@ body,
     overflow: hidden;
   }
 }
-
-
-.placeholder:after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  animation: ${placeholderLoading} 2s linear infinite;
-  background-color: #CCC;
-}
-
 `
 
 export const Main = styled.main`

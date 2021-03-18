@@ -6,11 +6,11 @@ import SwrFetchHook from '@/hooks/SwrFetchHook'
 import ClockIconSvg from '@/svg/clock-icon.svg'
 import MainNavCenterSvg from '@/svg/main-nav-center.svg'
 import ValorantPointsSvg from '@/svg/valorant-points.svg'
-import LogoSVG from '@/svg/valorant-logo.svg'
 import RadiantPointsSvg from '@/svg/radiant-points.svg'
-import { Container, SvgPlay, MobNav, MobMenu, MobFriends } from './Styles'
+import { Container, SvgPlay } from './Styles'
 import { useModalContext } from '@/context/Modal'
 import ConfigDialog from '@/molecules/ConfigDialog'
+import PlaceholderTag from '@/atoms/PlaceholderTag'
 
 interface INavItem {
   id: string
@@ -25,43 +25,46 @@ const MainNav: React.FC = () => {
   if (!data) {
     return (
       <>
-        <MobNav>
-          <MobMenu />
-          <LogoSVG />
-          <MobFriends />
-        </MobNav>
         <Container className="placeholderCont">
           <ul>
-            <li
-              className="placeholder website"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
+            <li className="website">
+              <PlaceholderTag width={30} height={30} />
+            </li>
 
-            <li
-              className="placeholder clock"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
-            <li
-              className="placeholder"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
-            <li
-              className="placeholder"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
-            <li
-              className="placeholder"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
-            <li
-              className="placeholder points"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
+            <li className="clock">
+              <PlaceholderTag width={45} height={16} />
+            </li>
 
-            <li
-              className="placeholder settings"
-              style={{ width: '100px', height: '30px' }}
-            ></li>
+            <li className="init">
+              <PlaceholderTag width={61} height={16} />
+            </li>
+
+            <li className="agents">
+              <PlaceholderTag width={83} height={16} />
+            </li>
+
+            <li className="play">
+              <SvgPlay>
+                <MainNavCenterSvg width="354" height="55" />
+              </SvgPlay>
+              <PlaceholderTag width={92} height={26} />
+            </li>
+
+            <li className=" carrier">
+              <PlaceholderTag width={94} height={16} />
+            </li>
+
+            <li className=" collection">
+              <PlaceholderTag width={87} height={16} />
+            </li>
+
+            <li className=" points">
+              <PlaceholderTag width={50} height={39} />
+            </li>
+
+            <li className=" settings">
+              <PlaceholderTag width={35} height={35} circle />
+            </li>
           </ul>
         </Container>
       </>
