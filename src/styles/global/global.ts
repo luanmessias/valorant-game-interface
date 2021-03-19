@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  background-color: #000;
 }
 
 html,
@@ -44,17 +45,19 @@ export const BGImage = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
-  background-image: url('/img/home_bg.jpg');
+  background-image: url('/img/home_bg_2021.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: -1;
   filter: blur(10px);
+  opacity: 1;
   transform: scale(1.5);
   transition: all 0.5s;
 
   &[data-route='/'] {
     filter: blur(0px);
+    opacity: 0.4;
     transform: scale(1);
   }
 `

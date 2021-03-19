@@ -79,7 +79,6 @@ export const AgentListItem = styled.li`
   }
 
   &:hover {
-    transform: scale(1.25);
     border-color: #d1b15e;
 
     .dot {
@@ -100,7 +99,7 @@ export const AgentListItem = styled.li`
   }
 
   &[data-active='true'] {
-    transform: scale(1.25);
+    transform: scale(1.15);
     border-color: #d1b15e;
     background-color: rgba(129, 204, 186, 1);
 

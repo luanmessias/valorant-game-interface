@@ -17,7 +17,7 @@ export const Container = styled.div`
   height: 50px;
   display: block;
   animation: ${placeholderLoading} 2s linear infinite;
-  background-color: #dd555c;
+  background-color: #000;
 
   &[data-circle='true'] {
     border-radius: 50%;

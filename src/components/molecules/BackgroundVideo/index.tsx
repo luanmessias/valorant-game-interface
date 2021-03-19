@@ -12,7 +12,7 @@ import VideoOnSVG from '@/svg/video-on.svg'
 import VideoOffSVG from '@/svg/video-off.svg'
 import { useBGVideoContext } from '@/context/BackgroundVideo'
 
-const BackgroundVideo: React.FC = () => {
+const BackgroundVideo = () => {
   const { playVideo, setpLayVideo }: any = useBGVideoContext()
 
   const switchVideoPlayer = () => {
@@ -35,6 +35,7 @@ const BackgroundVideo: React.FC = () => {
 
         <BgVideo
           data-active={playVideo}
+          preload="true"
           autoPlay
           muted
           loop

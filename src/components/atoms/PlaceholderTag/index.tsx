@@ -1,11 +1,13 @@
 import React from 'react'
+import LoadingLoop from '@/atoms/LoadingLoop'
 
 import { Container } from './styles'
 
 interface PlaceholderTagProps {
   circle?: boolean
-  width?: number
-  height?: number
+  showLoading?: boolean
+  width?: number | string
+  height?: number | string
   color?: string
 }
 
@@ -13,13 +15,16 @@ const PlaceholderTag = ({
   circle,
   width,
   height,
-  color
+  color,
+  showLoading
 }: PlaceholderTagProps) => {
   return (
     <Container
       data-circle={circle}
       style={{ width, height, backgroundColor: color }}
-    ></Container>
+    >
+      {showLoading && <LoadingLoop />}
+    </Container>
   )
 }
 

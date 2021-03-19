@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
 import { PhotoCont, ArtToggle, Art2D, Art3D, ArtContent } from './Styles'
+import PlaceholderTag from '@/atoms/PlaceholderTag'
 
 interface IRouteAgent {
   RouteAgent: string
-}
-
-interface IRoles {
-  name: string
-  description: string
 }
 
 interface IAgents {
@@ -30,16 +26,17 @@ const AgentDescription: React.FC<IRouteAgent> = ({
 }: IRouteAgent) => {
   const [changeArt, setChangeArt] = useState(true)
   const agents = SwrFetchHook<IAgents[]>('/api/agents').data
-  const roles = SwrFetchHook<IRoles[]>('/api/roles').data
 
   if (!agents) {
-    return <p>carregando...</p>
+    return (
+      <PlaceholderTag
+        width={600}
+        height="100vh"
+        color="transparent"
+        showLoading={true}
+      />
+    )
   }
-
-  if (!roles) {
-    return <p>carregando...</p>
-  }
-
   return (
     <PhotoCont>
       <ArtToggle data-active={changeArt}>

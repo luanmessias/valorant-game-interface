@@ -21,15 +21,14 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   z-index: 0;
-  background: rgb(115, 14, 14);
+  background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
-    rgba(115, 14, 14, 1) 0%,
-    rgba(121, 129, 118, 1) 13%,
-    rgba(59, 131, 116, 1) 50%,
-    rgba(117, 58, 53, 1) 90%,
-    rgba(115, 14, 14, 1) 100%
+    rgba(2, 0, 36, 1) 0%,
+    rgba(24, 80, 124, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
   );
+
   transition: opacity 0.5s;
 
   &[data-active='false'] {
@@ -45,7 +44,7 @@ export const BgVideo = styled.video`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  opacity: 0.1;
+  opacity: 0.2;
   transition: all 0.5s;
 
   &[data-active='false'] {
@@ -86,7 +85,7 @@ export const VideoSwitch = styled.div`
   position: relative;
   width: 65px;
   height: 25px;
-  background-color: rgba(59, 131, 116, 1);
+  background-color: rgba(0, 212, 255, 1);
   margin-left: auto;
   border-radius: 50px;
   padding: 2px 5px;

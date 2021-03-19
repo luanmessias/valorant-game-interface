@@ -640,6 +640,38 @@
           "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt966535853a54c58c/5f7fac19df178b0ea98495ad/Val_Skye_X_Ability_Web.mp4"
         }
       ]
+    },
+    {
+      "id": 14,
+      "name": "yoru",
+      "role": "duelist",
+      "biography": "Japanese native, Yoru, rips holes straight through reality to infiltrate enemy lines unseen. Using deception and aggression in equal measure, he gets the drop on each target before they know where to look.",
+      "abilities": [
+        {
+          "id": 1,
+          "name": "BLINDSIDE",
+          "description": "EQUIP to rip an unstable dimensional fragment from reality. FIRE to throw the fragment, activating a flash that winds up once it collides with a hard surface in the world",
+          "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt9af4e1e3b962f7b4/5ff77b6fa703d10ab87ebb27/Yoru_Abilities_Blinding_1_1.mp4"
+        },
+        {
+          "id": 2,
+          "name": "GATECRASH",
+          "description": "EQUIP to harness a rift tether FIRE to send the tether out moving forward ALT FIRE to place a tether in place ACTIVATE to teleport to the tether's location",
+          "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt0945f456a2bcac77/5ff77b51b529867fcec28402/Yoru_Abilities_Teleport_1_1.mp4"
+        },
+        {
+          "id": 3,
+          "name": "FAKEOUT",
+          "description": "EQUIP an echo that mimics footsteps when activated FIRE to activate and send the echo forward ALT FIRE to place an echo in place USE the inactive echo to send it forward",
+          "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt47c96a79f14605fc/5ff77bc5b47cdf7fc7d6cd31/Yoru_Abilities_Footsteps_1.mp4"
+        },
+        {
+          "id": 4,
+          "name": "DIMENSIONAL DRIFT",
+          "description": "EQUIP a mask that can see between dimensions. FIRE to drift into Yoru's dimension, unable to be affected or seen by enemies from the outside",
+          "video": "https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt95a89496da772b65/5ff77c0e6aab641cd100f638/Yoru_Abilities_ULT_3_1.mp4"
+        }
+      ]
     }
   ],
   "cards": [

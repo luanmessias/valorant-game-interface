@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import SwrFetchHook from '@/hooks/SwrFetchHook'
-import ValorantLogoSVG from '@/svg/valorant-logo.svg'
+import LoadingLoop from '@/atoms/LoadingLoop'
+
 import {
   AbilitiesCont,
   AbilitiesTab,
   Ability,
   AbilitieDescription,
   AbilityVideoContainer,
-  AbilityVideo,
-  VideoLoading
+  AbilityVideo
 } from './Styles'
 
 interface IRouteAgent {
@@ -85,6 +85,7 @@ const AgentAbilities: React.FC<IRouteAgent> = ({ RouteAgent }: IRouteAgent) => {
                 <AbilityVideoContainer>
                   <AbilityVideo
                     key={agent.abilities[activeAbility - 1].video}
+                    preload="true"
                     autoPlay
                     muted
                     loop
@@ -94,10 +95,7 @@ const AgentAbilities: React.FC<IRouteAgent> = ({ RouteAgent }: IRouteAgent) => {
                       type="video/mp4"
                     />
                   </AbilityVideo>
-                  <VideoLoading>
-                    <div></div>
-                    <ValorantLogoSVG />
-                  </VideoLoading>
+                  <LoadingLoop />
                 </AbilityVideoContainer>
               </AbilitieDescription>
             </AbilitiesTab>
