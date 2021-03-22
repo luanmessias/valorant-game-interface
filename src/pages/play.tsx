@@ -118,11 +118,6 @@ const Play: React.FC<IProfile> = (): JSX.Element => {
                         <span>{player.name}</span>
                       </div>
                       <AddFriendButton
-                        // onClick={() => {
-                        //   setPlayer(player.name)
-                        //   closeModal()
-                        // }}
-
                         onClick={() => handleSetPlayer(setPlayer, player.name)}
                       >
                         <PlusButtonSVG />

@@ -9,7 +9,7 @@ const CloseGroupButton: React.FC = () => {
   return (
     <Container>
       <Button>
-        <span>GRUPO FECHADO</span>
+        <span>CLOSED TEAM</span>
         <Switch
           data-active={buttonActive}
           onClick={() => setButtonActive(!buttonActive)}

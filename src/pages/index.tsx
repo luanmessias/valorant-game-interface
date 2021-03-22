@@ -5,7 +5,7 @@ import { Container } from '@/pageStyles/home'
 
 import BgVideo from '@/molecules/BackgroundVideo'
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <>
       <Container>

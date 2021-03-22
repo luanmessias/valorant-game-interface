@@ -3,27 +3,27 @@
     {
       "id": "init",
       "url": "/",
-      "title": "inicio"
+      "title": "home"
     },
     {
       "id": "agents",
       "url": "/agents/brimstone",
-      "title": "agentes"
+      "title": "agents"
     },
     {
       "id": "play",
       "url": "/play",
-      "title": "jogar"
+      "title": "play"
     },
     {
-      "id": "carrier",
-      "url": "/carrier",
-      "title": "carreira"
+      "id": "career",
+      "url": "/career",
+      "title": "career"
     },
     {
       "id": "collection",
       "url": "/collection",
-      "title": "colecao"
+      "title": "collection"
     }
   ],
   "game_modes": [

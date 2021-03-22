@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Collection: React.FC = () => {
+const Collection = () => {
   return (
     <>
       <h1>Collection</h1>

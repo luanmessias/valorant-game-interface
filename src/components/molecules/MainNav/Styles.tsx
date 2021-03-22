@@ -70,7 +70,7 @@ export const Container = styled.nav`
         margin-right: 200px;
       }
 
-      &.carrier {
+      &.career {
         margin-left: 200px;
       }
 
