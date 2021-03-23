@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { Container, RatingContent, RatingTitle, RatingEpisode } from './styles'
 
-function CareerRankType() {
+const CareerRankType = () => {
   return (
     <Container>
       <RatingContent>
