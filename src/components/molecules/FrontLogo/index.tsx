@@ -31,7 +31,7 @@ const FrontLogo: React.FC = () => {
       variants={animateVariants}
     >
       <FrontLogoSvg />
-      <CurrentAct>IGNIÇÃO: ATO 3</CurrentAct>
+      <CurrentAct>RETAKE: ACT 1</CurrentAct>
     </Container>
   )
 }

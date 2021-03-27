@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { minDevice, maxDevice } from '@/globalStyles/global/device'
 
 export const Container = styled.div`
   background-color: rgba(47, 54, 60, 0.9);
@@ -17,10 +16,6 @@ export const Container = styled.div`
 
   &[data-active='false'] {
     right: -195px;
-  }
-
-  @media ${maxDevice.mobileL} {
-    display: none;
   }
 `
 

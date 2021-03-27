@@ -11,10 +11,14 @@ export const Container = styled.div`
   width: 100%;
   margin-top: 20px;
   background-color: rgba(255, 255, 255, 0.1);
+  min-height: 636px;
 `
-
-export const LeaderboardContainer = styled.div``
-
+export const LeaderboardContainer = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+`
 export const HeadList = styled.div`
   display: flex;
   flex-direction: row;
@@ -23,7 +27,6 @@ export const HeadList = styled.div`
   align-items: center;
   height: 30px;
 `
-
 export const TitleHead = styled.div`
   display: flex;
   color: #b9cdf1;
@@ -45,11 +48,12 @@ export const TitleHead = styled.div`
     padding-right: 15px;
   }
 `
-
 export const RankList = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  justify-content: space-between;
 `
 export const RankItem = styled.div`
   display: flex;
@@ -60,6 +64,13 @@ export const RankItem = styled.div`
   height: 60px;
   background-color: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid #5a657a;
+
+  &[data-first='true'] {
+    height: 120px;
+    ~ div {
+      height: 52.5px;
+    }
+  }
 
   > div {
     height: 100%;
@@ -75,6 +86,21 @@ export const RankItemPosition = styled.div`
   font-size: 35px;
   font-weight: 300;
   color: #fff;
+
+  svg {
+    display: none;
+    * {
+      fill: #ffff00;
+    }
+  }
+
+  &[data-first='true'] {
+    font-size: 45px;
+    font-weight: 500;
+    svg {
+      display: flex;
+    }
+  }
 `
 export const RankItemRating = styled.div`
   width: ${ColRatingWidth};
@@ -123,6 +149,59 @@ export const RankItemWon = styled.div`
     span {
       opacity: 1;
       color: #fff;
+    }
+  }
+`
+export const PaginateContainer = styled.div`
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+
+  .paginate {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+
+    li {
+      margin: 0px 1px;
+
+      > a {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+      }
+
+      &:hover:not(.pagDisabled) {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      &.pagDisabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      &.pagActive {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      a:active,
+      a:focus {
+        outline: 0;
+        -moz-outline-style: none;
+      }
     }
   }
 `

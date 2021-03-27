@@ -157,7 +157,6 @@ export const PlayButtonsContainer = styled.div`
   align-items: center;
   width: auto;
   position: relative;
-  margin-top: 30px;
   &:before {
     content: '';
     width: 100%;

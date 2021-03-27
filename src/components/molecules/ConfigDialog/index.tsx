@@ -22,19 +22,19 @@ const ConfigDalog: React.FC = () => {
           <AimSVF />
         </CloseModal>
         <DefaultButton className="DialogButton" href="/">
-          Configuracoes
+          Configuration
         </DefaultButton>
         <DefaultButton className="DialogButton" href="/">
-          Suporte
+          Support
         </DefaultButton>
         <DefaultButton className="DialogButton" href="/">
-          Sobre
+          About
         </DefaultButton>
         <ArrowSVG>
           <ArrowConfigSVG />
         </ArrowSVG>
         <DefaultButton className="DialogButtonRed" href="/">
-          Sair para a area de trabalho
+          Exit to desktop
         </DefaultButton>
       </Content>
       <LineDown />

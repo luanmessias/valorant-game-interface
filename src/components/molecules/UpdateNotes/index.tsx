@@ -9,7 +9,7 @@ const UpdateNotes: React.FC = () => {
       <div className="dot BottomLeft" />
       <div className="dot BottomRight" />
       <Content>
-        <div>NOTAS DE ATUALIZAÇÕES</div>
+        <div>UPDATE NOTES</div>
         <span>1.12</span>
       </Content>
     </Container>

@@ -37,7 +37,7 @@ const GameModes: React.FC = () => {
   return (
     <Container>
       <DecorativeBar />
-      <Title>MODOS EM DESTAQUE</Title>
+      <Title>MOST PLAYED MODES</Title>
       <Content>
         {data?.map(gm => {
           return (

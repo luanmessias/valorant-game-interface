@@ -5,8 +5,8 @@ const BannerNews: React.FC = () => {
   return (
     <Container>
       <div>
-        <strong>DESTAQUES</strong>
-        <span>NOVO PERSONAGEM</span>
+        <strong>NEWS</strong>
+        <span>NEW AGENT</span>
       </div>
     </Container>
   )
