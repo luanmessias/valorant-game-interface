@@ -55,6 +55,10 @@ yarn
 - [prettier](https://ghub.io/prettier): Prettier is an opinionated code formatter
 - [typescript](https://ghub.io/typescript): TypeScript is a language for application scale JavaScript development
 
+## Show your support
+
+Give a ⭐️ if you like this project!
+
 ## Contact
 If you want to contact me you can reach me at <luanmessias03@gmail.com>.
 
