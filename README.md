@@ -13,10 +13,15 @@
 This project is a game interface based on Valorant game UI from Riot Games made with ReactJS and NextJs. The proposal of this project is for code practice. THe ursers can access many game data like characters, habilities, ranks, guns and other informations from a fake API.
 
 ## Project Screen Shots
-![Screenshot 1](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_1.jpg?raw=true)
-![Screenshot 2](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_2.jpg?raw=true)
-![Screenshot 3](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_3.jpg?raw=true)
-![Screenshot 5](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_5.jpg?raw=true)
+| | |
+|-|-|
+|![Screenshot 1](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_1.jpg?raw=true)|![Screenshot 2](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_2.jpg?raw=true)|
+|![Screenshot 3](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_3.jpg?raw=true)|![Screenshot 5](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_5.jpg?raw=true)|
+
+
+
+
+
 
 ## Instalation
 Run this command on project root folder
