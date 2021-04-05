@@ -29,7 +29,7 @@ or with npm
 npm install
 ```
 
-## Runing project
+## Running the project
 Run this command on project root folder
 ```
 yarn dev
@@ -37,6 +37,11 @@ yarn dev
 or with npm
 ```
 npm run dev
+```
+
+The project will run on this address:
+```
+http://localhost:3000
 ```
 
 
