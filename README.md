@@ -19,15 +19,26 @@ This project is a game interface based on Valorant game UI from Riot Games made 
 |![Screenshot 3](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_3.jpg?raw=true)|![Screenshot 5](https://github.com/luanmessias/valorant-game-interface/blob/main/public/img/readme/screenshot_5.jpg?raw=true)|
 
 
-
-
-
-
 ## Instalation
 Run this command on project root folder
 ```
-yarn
+yarn install
 ```
+or with npm
+```
+npm install
+```
+
+## Runing project
+Run this command on project root folder
+```
+yarn dev
+```
+or with npm
+```
+npm run dev
+```
+
 
 ## Dependencies
 - [axios](https://ghub.io/axios): Promise based HTTP client for the browser and node.js
